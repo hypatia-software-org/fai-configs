@@ -1,0 +1,40 @@
+#! /bin/sh
+
+# install a diskless workstation
+# this is just an example, but not perfect code
+#
+# (c) Thomas Lange, 2001, lange at debian.org
+
+# server and all filesystems for diskless client
+server=......  # Fill in your server's name
+root=/export/$HOSTNAME    # Change according to your situation
+var=
+swap=
+
+# Under lenny, the mount point does not exist at this stage yet.
+[ ! -d $target ] && mkdir $target
+
+# dpkg wants a lock but linux NFS can't do it yet
+mountopt="-o nolock,async"
+# Add the options which helped to speed up diskless machines under etch.
+mountopt=${mountopt},tcp,intr,rsize=8192,wsize=8192,retrans=10
+
+# mount2dir can't mount nfs directories yet, so do it now
+# and skip the default task later
+# also clean up the directories (preserve is not yet possible)
+mount $mountopt $server:$root $target
+echo 'Deleting target files from previous OS may take some time...'
+echo 'You may help a little by deleting files yourself on the server.'
+#rm -rf $target/.[0-z]* $target/*
+(cd $target; mklost+found)
+
+# create fstab
+cat > /tmp/fai/fstab <<EOF
+$server:$root / nfs rw,errors=remount-ro 0 0
+EOF
+# $server:$usr /usr nfs rw 0 0
+
+echo "#!" > $LOGDIR/disk_var.sh
+
+# now skip some default tasks
+skiptask partition mountdisks

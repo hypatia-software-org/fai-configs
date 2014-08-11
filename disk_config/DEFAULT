@@ -1,0 +1,4 @@
+# an extremely simple layout
+#
+disk_config disk1 disklabel:msdos
+primary /      250      ext3  rw

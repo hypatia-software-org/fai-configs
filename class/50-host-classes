@@ -8,6 +8,8 @@ case $HOSTNAME in
 	echo "FAIBASE DEMO FAISERVER" ;;
     demohost)
 	echo "FAIBASE DHCPC DEMO" ;;
+    rms)
+	echo "FAIBASE DHCPC DEMO XORG TRISQUEL RMS";; 
     gnomehost)
 	echo "FAIBASE DHCPC DEMO XORG GNOME";;
     atom*)
@@ -16,9 +18,13 @@ case $HOSTNAME in
 	echo "FAIBASE DHCPC LVM_XEN_SERVER XEN" ;;
     puma)
 	echo "FAIBASE DHCPC RAID_XEN_VIRTUAL" ;;
+    freestation)
+	echo "FAIBASE DHCPC DISKLESS XORG TRISQUEL" ;;
     *)
-	echo "FAIBASE DHCPC" ;;
+	echo "FAIBASE DHCPC DEMO XORG GNOME";;
 esac
 
-(ifclass I386 || ifclass AMD64) && echo GRUB_PC
+if ! ifclass DISKLESS; then
+    (ifclass I386 || ifclass AMD64) && echo GRUB_PC
+fi
 exit 0
