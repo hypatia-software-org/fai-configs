@@ -18,7 +18,7 @@ case $HOSTNAME in
 	echo "FAIBASE DHCPC LVM_XEN_SERVER XEN" ;;
     puma)
 	echo "FAIBASE DHCPC RAID_XEN_VIRTUAL" ;;
-    freestation)
+    freestation*)
 	echo "FAIBASE DHCPC DISKLESS XORG TRISQUEL WORKSTATION" ;;
     *)
 	echo "FAIBASE DHCPC DEMO XORG GNOME";;
