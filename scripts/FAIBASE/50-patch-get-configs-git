@@ -1,0 +1,3 @@
+#!/bin/bash
+
+fcopy -v /usr/lib/fai/get-config-dir-git
