@@ -1,6 +1,8 @@
 PACKAGES aptitude WORKSTATION
 abrowser
 libreoffice
+gnome-calculator
+pidgin
 thunderbird
 enigmail
 emacs
