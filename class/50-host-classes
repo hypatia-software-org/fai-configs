@@ -24,7 +24,7 @@ case $HOSTNAME in
 	echo "FAIBASE DHCPC DEMO XORG GNOME";;
 esac
 
-if ! ifclass DISKLESS; then
-    (ifclass I386 || ifclass AMD64) && echo GRUB_PC
-fi
+
+(ifclass I386 || ifclass AMD64) && ! ifclass DISKLESS && echo GRUB_PC
+
 exit 0
