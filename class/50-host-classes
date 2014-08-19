@@ -1,30 +1,34 @@
-#! /bin/bash
+#! /bin/bash                                                                                                                                   
 . /usr/lib/fai/subroutines
-# assign classes hosts
+# assign classes hosts                                                                                                                         
 
-# use a list of classes for our demo machine
+nogrub=0
+
+# use a list of classes for our demo machine                                                                                                   
 case $HOSTNAME in
     faiserver)
-	echo "FAIBASE DEMO FAISERVER" ;;
+        echo "FAIBASE DEMO FAISERVER" ;;
     demohost)
-	echo "FAIBASE DHCPC DEMO" ;;
+        echo "FAIBASE DHCPC DEMO" ;;
     rms)
-	echo "FAIBASE DHCPC DEMO XORG TRISQUEL RMS";; 
+        echo "FAIBASE DHCPC DEMO XORG TRISQUEL RMS";;
     gnomehost)
-	echo "FAIBASE DHCPC DEMO XORG GNOME";;
+        echo "FAIBASE DHCPC DEMO XORG GNOME";;
     atom*)
-	echo "FAIBASE DHCPC DEMO" ;;
+        echo "FAIBASE DHCPC DEMO" ;;
     bear)
-	echo "FAIBASE DHCPC LVM_XEN_SERVER XEN" ;;
+        echo "FAIBASE DHCPC LVM_XEN_SERVER XEN" ;;
     puma)
-	echo "FAIBASE DHCPC RAID_XEN_VIRTUAL" ;;
+        echo "FAIBASE DHCPC RAID_XEN_VIRTUAL" ;;
     freestation*)
-	echo "FAIBASE DHCPC DISKLESS XORG TRISQUEL WORKSTATION" ;;
-    *)
-	echo "FAIBASE DHCPC DEMO XORG GNOME";;
+        echo "FAIBASE DHCPC DISKLESS XORG TRISQUEL WORKSTATION"
+        nogrub=1 ;;
+    *)  
+        echo "FAIBASE DHCPC DEMO XORG GNOME";;
 esac
 
-
-(ifclass I386 || ifclass AMD64) && ! ifclass DISKLESS && echo GRUB_PC
+if [ $nogrub -eq 0 ]; then
+    (ifclass I386 || ifclass AMD64) && echo GRUB_PC
+fi
 
 exit 0
