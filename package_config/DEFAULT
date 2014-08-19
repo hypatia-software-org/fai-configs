@@ -1,13 +1,13 @@
 PACKAGES aptitude I386
-linux-image initramfs-tools
+linux-image-generic initramfs-tools
 memtest86+
 
 PACKAGES aptitude CHROOT
-linux-image
+linux-image-generic
 
 
 PACKAGES aptitude AMD64
-linux-image initramfs-tools
+linux-image-generic initramfs-tools
 memtest86+
 
 PACKAGES aptitude XEN
