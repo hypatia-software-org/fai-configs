@@ -23,6 +23,9 @@ case $HOSTNAME in
     freestation*)
         echo "FAIBASE DHCPC DISKLESS XORG TRISQUEL WORKSTATION"
         nogrub=1 ;;
+    freetop-x60*)
+	echo "FAIBASE DHCPC XORG TRISQUEL WORKSTATION"
+	;;
     *)  
         echo "FAIBASE DHCPC DEMO XORG GNOME";;
 esac
