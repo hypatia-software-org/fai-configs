@@ -1,6 +1,9 @@
 PACKAGES aptitude WORKSTATION
 abrowser
+midori
 libreoffice
+pdfmod
+evince
 gnome-calculator
 pidgin
 thunderbird
