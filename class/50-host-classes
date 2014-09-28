@@ -21,7 +21,7 @@ case $HOSTNAME in
     puma)
         echo "FAIBASE DHCPC RAID_XEN_VIRTUAL" ;;
     freestation*)
-        echo "FAIBASE DHCPC DISKLESS XORG TRISQUEL WORKSTATION FSF"
+        echo "FAIBASE DISKLESS XORG TRISQUEL WORKSTATION FSF"
         nogrub=1 ;;
     freetop-x60*)
 	echo "FAIBASE DHCPC XORG TRISQUEL WORKSTATION FSF"
