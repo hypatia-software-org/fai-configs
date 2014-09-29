@@ -35,3 +35,11 @@ youtube-dl
 wicd
 wicd-client
 unrar-free
+devscripts
+# For building emacs
+debhelper
+dh-apparmor
+gettext
+intltool-debian
+libunistring0
+po-debconf
