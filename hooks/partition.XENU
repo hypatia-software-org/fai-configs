@@ -1,0 +1,21 @@
+#!/bin/bash
+# Lisa Maginnis - Sr SysAdmin
+# Taken from: http://wiki.fai-project.org/wiki/Using_FAI_to_set_up_XEN_domains
+
+[ -f $LOGDIR/our.skip.partition ] && exit 0
+
+for our_cl in $classes; do
+  [ $our_cl = "XENU" ] && continue
+  [ -f $FAI/hooks/partition.$our_cl ] && exit 0
+done
+
+mkfs.ext4 -j /dev/xvda2 > /dev/null
+mkswap /dev/xvda1 > /dev/null
+
+cat > /tmp/fai/fstab <<EOF
+/dev/xvda2 / ext4 defaults 0 0
+/dev/xvda1 none swap sw 0 0
+EOF
+
+echo "#!" > $diskvar
+touch $LOGDIR/skip.partition
