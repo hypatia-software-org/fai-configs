@@ -20,6 +20,8 @@ case $HOSTNAME in
         echo "FAIBASE DHCPC LVM_XEN_SERVER XEN" ;;
     puma)
         echo "FAIBASE DHCPC RAID_XEN_VIRTUAL" ;;
+    diskstation*)
+	echo "FAIBASE DISKLESS DISKTOOLS SYSADMIN FSF"
     freestation*)
         echo "FAIBASE DISKLESS XORG TRISQUEL WORKSTATION FSF"
         nogrub=1 ;;

@@ -1,0 +1,5 @@
+PACKAGES aptitude
+hdparm
+iotop
+sysstat
+rsync
