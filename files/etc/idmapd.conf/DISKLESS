@@ -15,7 +15,7 @@ root@tarantula:/srv/fai/config# cat /etc/idmapd.conf
 Verbosity = 0
 Pipefs-Directory = /run/rpc_pipefs
 # set your own domain here, if id differs from FQDN minus hostname
-# Domain = localdomain
+Domain = localdomain
 
 [Mapping]
 
