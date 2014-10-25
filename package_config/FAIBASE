@@ -25,3 +25,4 @@ pciutils usbutils
 lvm2
 git
 manpages
+man-db
