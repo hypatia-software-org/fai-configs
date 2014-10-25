@@ -24,3 +24,4 @@ console-common
 pciutils usbutils
 lvm2
 git
+manpages

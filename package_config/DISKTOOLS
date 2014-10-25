@@ -4,3 +4,4 @@ hddtemp
 iotop
 sysstat
 rsync
+smartmontools
