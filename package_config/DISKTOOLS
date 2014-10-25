@@ -1,5 +1,6 @@
 PACKAGES aptitude
 hdparm
+hddtemp
 iotop
 sysstat
 rsync
