@@ -5,3 +5,4 @@ iotop
 sysstat
 rsync
 smartmontools
+mdadm
