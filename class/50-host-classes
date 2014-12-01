@@ -30,7 +30,7 @@ case $HOSTNAME in
 	echo "FAIBASE DHCPC XORG TRISQUEL WORKSTATION FSF"
 	;;
     iwikiserver*)
-	echo "FAIBASE IWIKI SYSADMIN"
+	echo "FAIBASE IKIWIKI SYSADMIN"
 	nogrub=1
 	;;
     *)  
