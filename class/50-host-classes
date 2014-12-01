@@ -29,6 +29,10 @@ case $HOSTNAME in
     freetop-x60*)
 	echo "FAIBASE DHCPC XORG TRISQUEL WORKSTATION FSF"
 	;;
+    iwikiserver*)
+	echo "FAIBASE IWIKI SYSADMIN"
+	nogrub=1
+	;;
     *)  
         echo "FAIBASE DHCPC DEMO XORG GNOME";;
 esac
