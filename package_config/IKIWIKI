@@ -1,6 +1,7 @@
 PACKAGES aptitude
 apache2
 libapache2-mod-php5
+libdatetime-format-dateparse-perl
 ikiwiki
 
 
