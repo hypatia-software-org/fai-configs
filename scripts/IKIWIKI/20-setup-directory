@@ -1,0 +1,3 @@
+#!/bin/sh
+
+$ROOTCMD mkdir /var/www/ikiwiki/
