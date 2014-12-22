@@ -1,0 +1,9 @@
+#!/bin/sh
+
+$ROOTCMD mkdir /srv/git # create the git source directory
+
+$ROOTCMD mv /root/gluestick.git /srv/git/ # move the git source to the new directory
+$ROOTCMD mv /root/public_html/gluestick /var/www/html # move the public html files to the var location
+$ROOTCMD mv /root/gluestick /srv/  # move the source into location
+
+

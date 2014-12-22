@@ -5,4 +5,5 @@ libdatetime-format-dateparse-perl
 ikiwiki
 gcc
 libc-dev
-
+librpc-xml-perl
+python-docutils
