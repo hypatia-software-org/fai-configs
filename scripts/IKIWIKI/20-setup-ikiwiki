@@ -6,5 +6,5 @@ if [ ! -e /etc/ikiwiki/ikiwiki.setup ]; then
  fcopy -v /etc/ikiwiki/ikiwiki.setup
 
  # run setup
- $ROOTCMD ikiwiki --setup /etc/ikiwiki/ikiwiki.setup/DEFAULT
+ $ROOTCMD ikiwiki --setup /etc/ikiwiki/auto.setup/DEFAULT
 fi
