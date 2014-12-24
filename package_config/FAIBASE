@@ -27,6 +27,5 @@ lvm2
 git
 manpages
 man-db
-rsyslogd-
+rsyslog-
 syslog-ng
-network-manager-
