@@ -1,7 +1,6 @@
-PACKAGES aptitude DISKLESS
+PACKAGES aptitude VM
 grub-pc-
 linux-image-
-linux-image-3.13.0-40-generic-
-linux-image-extra-3.13.0-40-generic-
+linux-image-generic-
 
 
