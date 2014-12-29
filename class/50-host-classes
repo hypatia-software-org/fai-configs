@@ -23,11 +23,11 @@ case $HOSTNAME in
     diskstation*)
 	echo "FAIBASE DISKLESS DISKTOOLS SYSADMIN FSF"
         nogrub=1 ;;
+    freestation04)
+        echo "FAIBASE DISKLESS XORG TRISQUEL WORKSTATION FSF SYSADMIN MV"
+        nogrub=1 ;;
     freestation*)
         echo "FAIBASE DISKLESS XORG TRISQUEL WORKSTATION FSF"
-        nogrub=1 ;&
-    freestation04)
-        echo "MV FAIBASE DISKLESS XORG TRISQUEL WORKSTATION FSF SYSADMIN"
         nogrub=1 ;;
     freetop-x60*)
 	echo "FAIBASE DHCPC XORG TRISQUEL WORKSTATION FSF"
@@ -36,6 +36,10 @@ case $HOSTNAME in
 	echo "FAIBASE IKIWIKI SYSADMIN VM"
 	nogrub=1
 	;;
+    jobserver*)
+        echo "FAIBASE  SYSADMIN VM"
+        nogrub=1
+        ;;
     *)  
         echo "FAIBASE DHCPC DEMO XORG GNOME";;
 esac
