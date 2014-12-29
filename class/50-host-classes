@@ -37,7 +37,7 @@ case $HOSTNAME in
 	nogrub=1
 	;;
     jobserver*)
-        echo "FAIBASE  SYSADMIN VM"
+        echo "FAIBASE JOB SYSADMIN VM"
         nogrub=1
         ;;
     *)  
