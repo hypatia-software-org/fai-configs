@@ -1,4 +1,3 @@
-PACKAGES aptitude
+PACKAGES aptitude SYSADMIN
 emacs23-nox
 screen
-bind9

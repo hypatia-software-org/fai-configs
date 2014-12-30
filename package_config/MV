@@ -1,6 +1,10 @@
-PACKAGES aptitude
+PACKAGES aptitude MV
 openbox
 obmenu
 obconf
+<<<<<<< HEAD
 wicd
 openbox-themes
+=======
+bind9
+>>>>>>> becb639a7cbbd2e939d018df7a0ae305b906b086
