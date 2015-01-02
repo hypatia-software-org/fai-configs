@@ -6,8 +6,8 @@ nogrub=0
 
 # use a list of classes for our demo machine                                                                                                   
 case $HOSTNAME in
-    faiserver)
-        echo "FAIBASE DEMO FAISERVER" ;;
+    faiserver*)
+	echo "FAIBASE FAISEVER SYSADMIN VM" ;;
     demohost)
         echo "FAIBASE DHCPC DEMO" ;;
     rms)
