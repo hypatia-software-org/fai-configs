@@ -2,9 +2,11 @@ PACKAGES aptitude MV
 openbox
 obmenu
 obconf
-<<<<<<< HEAD
-wicd
+wicd-gtk
 openbox-themes
-=======
 bind9
->>>>>>> becb639a7cbbd2e939d018df7a0ae305b906b086
+gmrun
+tint2
+xfce4-screenshooter
+conky
+
