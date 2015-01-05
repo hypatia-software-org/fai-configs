@@ -40,6 +40,10 @@ case $HOSTNAME in
         echo "FAIBASE JOB SYSADMIN VM"
         nogrub=1
         ;;
+    mysqlserver*)
+        echo "FAIBASE JOB SYSADMIN MYSQLD"
+        nogrub=1
+        ;;
     *)  
         echo "FAIBASE DHCPC DEMO XORG GNOME";;
 esac
