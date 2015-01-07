@@ -6,6 +6,6 @@ disk_config disk1 disklabel:msdos bootable:1 fstabkey:uuid
 
 primary /      100%        ext4  rw,noatime,errors=remount-ro
 
-disk_config disk2 disklabel:msdos bootable:0 fstabkey:uuid
+disk_config disk2 fstabkey:uuid
 
 primary swap   100% swap  rw                   
