@@ -1,0 +1,3 @@
+PACKAGES aptitude MYSQLD
+mysql-client
+mysql-server

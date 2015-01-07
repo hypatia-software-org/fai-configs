@@ -41,7 +41,7 @@ case $HOSTNAME in
         nogrub=1
         ;;
     mysqlserver*)
-        echo "FAIBASE JOB SYSADMIN MYSQLD"
+        echo "FAIBASE KVMGUEST SYSADMIN MYSQLD"
         nogrub=1
         ;;
     *)  
