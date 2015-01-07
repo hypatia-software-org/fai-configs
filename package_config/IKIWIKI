@@ -7,3 +7,5 @@ gcc
 libc-dev
 librpc-xml-perl
 python-docutils
+libapache2-mod-auth-cas
+libapache2-mod-python
