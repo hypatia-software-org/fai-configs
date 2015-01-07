@@ -1,3 +1,4 @@
 PACKAGES aptitude SYSADMIN
 emacs23-nox
 screen
+curl
