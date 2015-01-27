@@ -8,3 +8,5 @@ fi
 if ! $ROOTCMD test -e /home/ikiwiki/.ssh/id_rsa; then
     $ROOTCMD echo | $ROOTCMD sudo -u ikiwiki ssh-keygen -N ''
 fi
+
+fcopy /home/ikiwiki/.ssh/config
