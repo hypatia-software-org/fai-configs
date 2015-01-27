@@ -1,10 +1,13 @@
 #!/bin/sh
 
 # Detect if ikikwiki is already installed
-if [ ! -e /etc/ikiwiki/ikiwiki.setup ]; then
+if [ ! $ROOTCMD test -e /etc/ikiwiki/ikiwiki.setup ]; then
  # copy ikiwiki config
  fcopy -v /etc/ikiwiki/ikiwiki.setup
 
  # run setup
- $ROOTCMD ikiwiki --setup /etc/ikiwiki/auto.setup/DEFAULT
+ $ROOTCMD sudo -u ikiwiki ikiwiki --setup /etc/ikiwiki/ikiwiki.setup
 fi
+
+# Fix the local gitrepo
+fcopy /srv/ikiwiki/wiki.git/config

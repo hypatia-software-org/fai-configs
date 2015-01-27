@@ -9,4 +9,6 @@ if ! $ROOTCMD test -e /home/ikiwiki/.ssh/id_rsa; then
     $ROOTCMD echo | $ROOTCMD sudo -u ikiwiki ssh-keygen -N ''
 fi
 
+# Configure for remote use 
 fcopy /home/ikiwiki/.ssh/config
+
