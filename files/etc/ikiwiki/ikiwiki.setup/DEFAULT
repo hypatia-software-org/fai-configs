@@ -10,22 +10,22 @@
 # name of the wiki
 wikiname: gluestick
 # contact email for wiki
-adminemail: root@iwikiserver00.office.fsf.org
+adminemail: sysadmin-nonrt@fsf.org
 # users who are wiki admins
 adminuser:
 - admin
 # users who are banned from the wiki
 banned_users: []
 # where the source of the wiki is located
-srcdir: /root/gluestick
+srcdir: /srv/ikiwiki/wiki
 # where to build the wiki
-destdir: /root/public_html/gluestick
+destdir: /var/www/html/wiki
 # base url to the wiki
-url: http://iwikiserver00.office.fsf.org/~root/gluestick
+url: http://gluestick.office.fsf.org
 # url to the ikiwiki.cgi
-cgiurl: http://iwikiserver00.office.fsf.org/~root/gluestick/ikiwiki.cgi
+cgiurl: http://gluestick.office.fsf.org/ikiwiki.cgi
 # filename of cgi wrapper to generate
-cgi_wrapper: /root/public_html/gluestick/ikiwiki.cgi
+cgi_wrapper: /var/www/html/wiki/ikiwiki.cgi
 # mode for cgi_wrapper (can safely be made suid)
 cgi_wrappermode: 06755
 # number of seconds to delay CGI requests when overloaded
@@ -38,8 +38,20 @@ rcs: git
 add_plugins:
 - goodstuff
 - websetup
+- search
+- httpauth
+- pagecount
+- attachment
+- autoindex
+- toc
+- brokenlinks
+- edittemplate
+- rename
+- remove
 # plugins to disable
-disable_plugins: []
+disable_plugins:
+- passwordauth
+- rst
 # additional directory to search for template files
 templatedir: /usr/share/ikiwiki/templates
 # base wiki source location
@@ -81,7 +93,7 @@ hardlink: 0
 # group for wrappers to run in
 #wrappergroup: ikiwiki
 # extra library and plugin directory
-libdir: /root/.ikiwiki
+libdir: /usr/share/perl5/IkiWiki/Plugin
 # environment variables
 ENV: {}
 # time zone name
@@ -105,9 +117,9 @@ cookiejar:
 
 # git plugin
 # git hook to generate
-git_wrapper: /root/gluestick.git/hooks/post-update
+#git_wrapper: /srv/ikiwiki/wiki.git/hooks/post-update
 # shell command for git_wrapper to run, in the background
-#git_wrapper_background_command: git push github
+git_wrapper_background_command: 'git push'
 # mode for git_wrapper (can safely be made suid)
 #git_wrappermode: 06755
 # git pre-receive hook to generate
@@ -119,9 +131,9 @@ git_wrapper: /root/gluestick.git/hooks/post-update
 # gitweb url to show a diff ([[file]], [[sha1_to]], [[sha1_from]], [[sha1_commit]], and [[sha1_parent]] substituted)
 #diffurl: http://git.example.com/gitweb.cgi?p=wiki.git;a=blobdiff;f=[[file]];h=[[sha1_to]];hp=[[sha1_from]];hb=[[sha1_commit]];hpb=[[sha1_parent]]
 # where to pull and push changes (set to empty string to disable)
-#gitorigin_branch: origin
+gitorigin_branch: origin
 # branch that the wiki is stored in
-#gitmaster_branch: master
+gitmaster_branch: master
 
 # htmlscrubber plugin
 # PageSpec specifying pages not to scrub
@@ -137,7 +149,7 @@ atom: 1
 # allow atom feeds to be used?
 #allowatom: 0
 # urls to ping (using XML-RPC) on feed update
-#pingurl: http://rpc.technorati.com/rpc/ping
+pingurl: []
 
 ######################################################################
 # auth plugins
@@ -185,7 +197,7 @@ atom: 1
 
 ######################################################################
 # format plugins
-#   (creole, highlight, hnb, html, mdwn, otl, rawhtml, textile, txt)
+#   (creole, highlight, hnb, html, mdwn, otl, rawhtml, rst, textile, txt)
 ######################################################################
 
 # highlight plugin
@@ -233,8 +245,8 @@ atom: 1
 
 ######################################################################
 # web plugins
-#   (404, attachment, comments, editdiff, edittemplate, getsource, google,
-#    goto, mirrorlist, remove, rename, repolist, search, theme, userlist,
+#   (404, attachment, comments, editdiff, edittemplate, google, goto,
+#    mirrorlist, remove, rename, repolist, search, theme, userlist,
 #    websetup, wmd)
 ######################################################################
 
@@ -260,10 +272,6 @@ atom: 1
 # Restrict formats for comments to (no restriction if empty)
 #comments_allowformats: mdwn txt
 
-# getsource plugin
-# Mime type for returned source.
-#getsource_mimetype: text/plain; charset=utf-8
-
 # mirrorlist plugin
 # list of mirrors
 #mirrorlist: {}
@@ -277,7 +285,7 @@ atom: 1
 
 # search plugin
 # path to the omega cgi program
-#omega_cgi: /usr/lib/cgi-bin/omega/omega
+omega_cgi: /usr/lib/cgi-bin/omega/omega
 
 # theme plugin
 # name of theme to enable
@@ -289,7 +297,7 @@ atom: 1
 # list of additional setup field keys to treat as unsafe
 #websetup_unsafe: []
 # show unsafe settings, read-only, in web interface?
-#websetup_show_unsafe: 1
+websetup_show_unsafe: 1
 
 ######################################################################
 # widget plugins
@@ -349,7 +357,7 @@ atom: 1
 
 # autoindex plugin
 # commit autocreated index pages
-#autoindex_commit: 1
+autoindex_commit: 1
 
 # camelcase plugin
 # list of words to not turn into links
@@ -369,9 +377,9 @@ atom: 1
 
 # recentchanges plugin
 # name of the recentchanges page
-#recentchangespage: recentchanges
+recentchangespage: recentchanges
 # number of changes to track
-#recentchangesnum: 100
+recentchangesnum: 100
 
 # rsync plugin
 # command to run to sync updated pages
@@ -387,4 +395,4 @@ atom: 1
 # autocreate new tag pages?
 #tag_autocreate: 1
 # commit autocreated tag pages
-#tag_autocreate_commit: 1
+tag_autocreate_commit: 1
