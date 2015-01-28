@@ -7,7 +7,8 @@ if ! $ROOTCMD test -e /etc/ikiwiki/ikiwiki.setup ; then
 
  # run setup
  $ROOTCMD sudo -u ikiwiki ikiwiki --setup /etc/ikiwiki/ikiwiki.setup
+ # Fix the local gitrepo
+  $ROOTCMD sudo -u ikiwiki ikiwiki git clone git@vcs.fsf.org:gluestick.git
 fi
 
-# Fix the local gitrepo
-fcopy /srv/ikiwiki/wiki.git/config
+

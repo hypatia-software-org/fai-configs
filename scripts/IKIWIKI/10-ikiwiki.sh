@@ -12,3 +12,6 @@ fi
 # Configure for remote use 
 fcopy /home/ikiwiki/.ssh/config
 
+# Configure git
+$ROOTCMD git config --global user.name "WebUI"
+$ROOMCMD git config --global user.email "ikiwiki@gluestick.office.fsf.org"
