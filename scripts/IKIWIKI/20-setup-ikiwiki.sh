@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Detect if ikikwiki is already installed
-if [ ! $ROOTCMD test -e /etc/ikiwiki/ikiwiki.setup ]; then
+if ! $ROOTCMD test -e /etc/ikiwiki/ikiwiki.setup ; then
  # copy ikiwiki config
  fcopy -v /etc/ikiwiki/ikiwiki.setup
 
