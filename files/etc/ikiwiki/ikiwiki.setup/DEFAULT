@@ -108,7 +108,7 @@ wiki_file_chars: -[:alnum:]+/.:_
 allow_symlinks_before_srcdir: 0
 # cookie control
 cookiejar:
-  file: /root/.ikiwiki/cookies
+  file: /srv/ikiwiki/wiki/.ikiwiki/cookies
 
 ######################################################################
 # core plugins
