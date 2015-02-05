@@ -2,4 +2,5 @@ PACKAGES aptitude DISKLESS
 grub-pc-
 pwgen
 vlc
-gnupg-agen
+gnupg-agent
+filezilla
