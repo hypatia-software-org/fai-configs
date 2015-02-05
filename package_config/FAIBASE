@@ -29,3 +29,7 @@ manpages
 man-db
 rsyslog-
 syslog-ng
+autoconf
+automake
+make
+guile-2.0-dev

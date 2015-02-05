@@ -1,0 +1,56 @@
+<VirtualHost *:443>
+             ServerName gluestick.office.fsf.org
+             
+             SSLEngine on
+             SSLProtocol ALL -SSLv2 -SSLv3
+
+             SSLCertificateFile /etc/ssl/private/wildcard.fsf.org.crt
+             SSLCertificateKeyFile /etc/ssl/private/wildcard.fsf.org.key
+             SSLCACertificateFile /etc/ssl/private/GandiStandardSSLCA.pem
+
+             DocumentRoot /var/www/html/wiki    
+
+             Loglevel debug
+             CASDebug  On
+             CASVersion 1
+             CASAllowWildcardCert On
+             # This plugin seems unable to follow a Certificate Chain. Disable validation for now.  Ward, 2013-01-30
+             CASValidateServer Off
+             CASLoginURL https://cas.fsf.org/login
+             CASValidateURL https://cas.fsf.org/validate
+
+             <Location />
+             Authtype CAS
+             CASScope /
+#            Require group ikiwikiusers
+             Require group ikiwikiusers
+             AuthGroupFile /etc/apache2/cas-users.group
+             </Location>
+
+
+             ErrorLog /var/log/apache2/gluestick.office.fsf.org-error.log
+             CustomLog /var/log/apache2/gluestick.office.fsf.org-access.log combined
+
+
+  # Let Apache deal with favicon.ico, no need to get Django involved in that.
+    # Alias /favicon.ico /var/www/favicon.ico
+    # <LocationMatch "^/favicon.ico$">
+    # SetHandler None
+    # </LocationMatch>
+
+
+    # RedirectMatch ^\/$ /wiki
+
+    # <Location "/media">
+    #   SetHandler None
+    #   </Location>
+
+    <Directory /var/www/html/wiki/>
+      Options +ExecCGI
+      </Directory>
+
+  # ScriptAlias /wiki/ikiwiki.cgi /srv/ikiwiki/cgi/ikiwiki.cgi
+  # ScriptAlias /wiki/history /usr/lib/cgi-bin/viewvc.cgi
+
+    # Alias /wiki/icons /usr/share/apache2/icons
+</VirtualHost>
