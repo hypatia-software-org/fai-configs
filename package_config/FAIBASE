@@ -33,3 +33,5 @@ autoconf
 automake
 make
 guile-2.0-dev
+scribus
+scribus-template
