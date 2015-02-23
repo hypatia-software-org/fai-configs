@@ -1,0 +1,6 @@
+PACKAGES aptitude
+
+vlc
+gstreamer0.10
+gstreamer1.0-x
+gstreamer0.10-plugins-good
