@@ -44,7 +44,18 @@ case $HOSTNAME in
         echo "FAIBASE KVMGUEST SYSADMIN MYSQLD"
         nogrub=1
         ;;
+    streamstation*)
+        echo "FAIBASE DHCPC SYSADMIN STREAM"
+        nogrub=1
+        ;;
+    freetop*)
+        echo "FAIBASE DHCPC SYSADMIN XORG TRISQUEL WORKSTATION"
+        nogrub=1
+        ;;
+
     *)  
+
+
         echo "FAIBASE DHCPC DEMO XORG GNOME";;
 esac
 
