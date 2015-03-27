@@ -49,10 +49,10 @@ case $HOSTNAME in
         nogrub=1
         ;;
     streamstation*)
-        echo "FAIBASE DHCPC SYSADMIN STREAM"
+        echo "FAIBASE DHCPC SYSADMIN STREAM LIBREPLANET"
         ;;
     freetop*)
-        echo "FAIBASE DHCPC SYSADMIN XORG TRISQUEL WORKSTATION"
+        echo "FAIBASE DHCPC SYSADMIN XORG TRISQUEL WORKSTATION LIBREPLANET"
         ;;
 
     *)  
