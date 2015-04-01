@@ -24,7 +24,7 @@ case $HOSTNAME in
     diskstation*)
 	echo "FAIBASE DISKLESS DISKTOOLS SYSADMIN FSF"
         nogrub=1 ;;
-    freestation04)
+    freestation7)
         echo "FAIBASE DISKLESS XORG TRISQUEL WORKSTATION FSF SYSADMIN MV"
         nogrub=1 ;;
     freestation*)
