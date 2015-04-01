@@ -27,6 +27,9 @@ case $HOSTNAME in
     freestation7)
         echo "FAIBASE DISKLESS XORG TRISQUEL WORKSTATION FSF SYSADMIN MV"
         nogrub=1 ;;
+    freestation06)
+        echo "FAIBASE DISKLESS XORG TRISQUEL WORKSTATION FSF SYSADMIN JAPANESE"
+        nogrub=1 ;;
     freestation*)
         echo "FAIBASE DISKLESS XORG TRISQUEL WORKSTATION FSF"
         nogrub=1 ;;
