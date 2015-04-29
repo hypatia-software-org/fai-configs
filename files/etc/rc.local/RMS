@@ -14,7 +14,10 @@
 (echo 'keymaps 0-127'
 echo 'keycode 58 = Control'
 echo 'keycode 29 = Control') | loadkeys -
-
+#insure portmap was not started
+/etc/init.d/portmap stop
 rfkill block all
+macchanger -A eth0
+macchanger -A wlan0
 
 exit 0
