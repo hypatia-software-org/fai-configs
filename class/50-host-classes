@@ -24,8 +24,11 @@ case $HOSTNAME in
     diskstation*)
 	echo "FAIBASE DISKLESS DISKTOOLS SYSADMIN FSF"
         nogrub=1 ;;
-    freestation04)
+    freestation7)
         echo "FAIBASE DISKLESS XORG TRISQUEL WORKSTATION FSF SYSADMIN MV"
+        nogrub=1 ;;
+    freestation06)
+        echo "FAIBASE DISKLESS XORG TRISQUEL WORKSTATION FSF SYSADMIN JAPANESE"
         nogrub=1 ;;
     freestation*)
         echo "FAIBASE DISKLESS XORG TRISQUEL WORKSTATION FSF"
@@ -46,12 +49,10 @@ case $HOSTNAME in
         nogrub=1
         ;;
     streamstation*)
-        echo "FAIBASE DHCPC SYSADMIN STREAM"
-        nogrub=1
+        echo "FAIBASE DHCPC SYSADMIN STREAM LIBREPLANET"
         ;;
     freetop*)
-        echo "FAIBASE DHCPC SYSADMIN XORG TRISQUEL WORKSTATION"
-        nogrub=1
+        echo "FAIBASE DHCPC SYSADMIN XORG TRISQUEL WORKSTATION LIBREPLANET"
         ;;
 
     *)  
