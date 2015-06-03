@@ -56,9 +56,7 @@ case $HOSTNAME in
         ;;
 
     *)  
-
-
-        echo "FAIBASE DHCPC DEMO XORG GNOME";;
+        echo "FAIBASE";;
 esac
 
 if [ $nogrub -eq 0 ]; then
