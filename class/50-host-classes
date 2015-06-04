@@ -54,8 +54,12 @@ case $HOSTNAME in
     freetop*)
         echo "FAIBASE DHCPC SYSADMIN XORG TRISQUEL WORKSTATION LIBREPLANET"
         ;;
-
+    mwikiserver*)
+	echo "FAIBASE MEDIAWIKI SYSADMIN VM"
+	nogrub=1
+	;;
     *)  
+
         echo "FAIBASE";;
 esac
 
