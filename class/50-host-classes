@@ -59,6 +59,11 @@ case $HOSTNAME in
 	nogrub=1
 	;;
     *)  
+    printerserver*)
+	echo "FAIBASE CUPS SYSADMIN VM"
+	nogrub=1
+	;;
+    *)  
 
         echo "FAIBASE";;
 esac
