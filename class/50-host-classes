@@ -58,14 +58,12 @@ case $HOSTNAME in
 	echo "FAIBASE MEDIAWIKI SYSADMIN VM"
 	nogrub=1
 	;;
-    *)  
-    printerserver*)
+    printserver*)
 	echo "FAIBASE CUPS SYSADMIN VM"
 	nogrub=1
 	;;
     *)  
-
-        echo "FAIBASE";;
+        echo "FAIBASE" ;;
 esac
 
 if [ $nogrub -eq 0 ]; then
