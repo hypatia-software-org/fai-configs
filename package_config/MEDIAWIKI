@@ -11,3 +11,12 @@ phpmyadmin
 vsftpd
 php5-cli
 php5-gd
+wget
+unzip
+curl
+mysql-server
+php-cas
+php5-cgi
+php5-curl
+php5-gd
+php5-xmlrpc
