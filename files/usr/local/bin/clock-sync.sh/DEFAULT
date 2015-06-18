@@ -1,0 +1,51 @@
+#!/bin/sh
+
+# 2014/04/10 Lisa
+# Modified this script to use the usn pool from pool.ntp.org. More
+# Info on this can be found at the project page: http://www.pool.ntp.org/zone/us
+
+if [ -d /proc/sys/xen ]; then
+   echo 1 > /proc/sys/xen/independent_wallclock;
+fi
+
+servers='0.us.pool.ntp.org 1.us.pool.ntp.org 2.us.pool.ntp.org 3.us.pool.ntp.org'
+
+
+/usr/sbin/ntpdate $servers >/dev/null 2>&1
+rc="$?"
+
+if [ $rc -ne 0 ] ; then
+   /usr/sbin/ntpdate $servers 2>&1 \
+   | grep -q ': the NTP socket is in use, exiting$'
+if [ $? -eq 0 ] ; then
+   exit 0          # machine is running NTP daemon
+fi
+	for backoff in 15 30 60 300 ; do
+	sleep $backoff
+	/usr/sbin/ntpdate $servers >/dev/null 2>&1
+	rc="$?"
+	[ $rc -eq 0 ] && break
+	done
+fi
+
+if [ $rc -ne 0 ] ; then
+   echo "ntpdate failed, trying again"
+   # try again, and be verbose
+   date
+   ping -c 3 $servers
+   /usr/sbin/ntpdate $servers 2>&1
+   if [ $? -ne 0 ] ; then
+   # DNS failure?
+   sleep 300
+   date
+   ping -c 3 $servers
+   /usr/sbin/ntpdate $server 2>&1
+if [ $? -ne 0 ] ; then
+   exit
+   fi
+   fi
+   fi
+
+if [ -e /dev/rtc ]; then
+   /sbin/hwclock -w
+fi
