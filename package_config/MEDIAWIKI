@@ -20,3 +20,6 @@ php5-cgi
 php5-curl
 php5-gd
 php5-xmlrpc
+git
+ca-certificates
+openssl
