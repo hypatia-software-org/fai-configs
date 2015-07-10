@@ -71,8 +71,9 @@ case $HOSTNAME in
 	nogrub=1
 	;;
     *)  
-        echo "FAIBASE" ;;
+        echo "FAIBASE"
 	nogrub=1 
+	;;
 esac
 
 if [ $nogrub -eq 0 ]; then
