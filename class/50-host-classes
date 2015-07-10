@@ -62,8 +62,17 @@ case $HOSTNAME in
 	echo "FAIBASE CUPS SYSADMIN VM"
 	nogrub=1
 	;;
+    crmserver*)
+	echo "FAIBASE WWW CIVICRM SYSADMIN VM"
+	nogrub=1
+	;;
+    crmdevserver*)
+	echo "FAIBASE WWW CIVICRM SYSADMIN VM MYSQLD"
+	nogrub=1
+	;;
     *)  
         echo "FAIBASE" ;;
+	nogrub=1 
 esac
 
 if [ $nogrub -eq 0 ]; then
