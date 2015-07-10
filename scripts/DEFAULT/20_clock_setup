@@ -1,0 +1,5 @@
+#!/bin/bash
+
+fcopy -v /etc/cron.d/ntpdate
+
+fcopy -v /usr/local/bin/clock-sync.sh
