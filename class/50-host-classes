@@ -70,6 +70,10 @@ case $HOSTNAME in
 	echo "FAIBASE WWW CIVICRM SYSADMIN VM MYSQLD"
 	nogrub=1
 	;;
+    gnusocial*)
+	echo "FAIBASE WWW SYSADMIN VM MYSQLD"
+	nogrub=1
+	;;
     *)  
         echo "FAIBASE"
 	nogrub=1 
