@@ -65,6 +65,9 @@ case $HOSTNAME in
     crmdevserver*)
 	echo "FAIBASE WWW CIVICRM SYSADMIN VM MYSQLD"
 	;;
+    gnusocial*)
+	echo "FAIBASE WWW SYSADMIN VM MYSQLD"
+	;;
     *)  
         echo "FAIBASE"
 	;;
