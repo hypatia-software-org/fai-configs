@@ -2,82 +2,72 @@
 . /usr/lib/fai/subroutines
 # assign classes hosts                                                                                                                         
 
-nogrub=0
+if (ifclass I386 || ifclass AMD64) ; then
+    GRUB="GRUB_PC"
+fi
 
 # use a list of classes for our demo machine                                                                                                   
 case $HOSTNAME in
     faiserver*)
 	echo "FAIBASE FAISEVER SYSADMIN VM"
-        nogrub=1 ;;
+        ;;
     demohost)
-        echo "FAIBASE DHCPC DEMO" ;;
+        echo "FAIBASE $GRUB DHCPC DEMO" ;;
     rms)
-        echo "FAIBASE DHCPC DEMO XORG TRISQUEL RMS";;
+        echo "FAIBASE $GRUB DHCPC DEMO XORG TRISQUEL RMS";;
     gnomehost)
-        echo "FAIBASE DHCPC DEMO XORG GNOME";;
+        echo "FAIBASE $GRUB DHCPC DEMO XORG GNOME";;
     atom*)
-        echo "FAIBASE DHCPC DEMO" ;;
+        echo "FAIBASE $GRUB DHCPC DEMO" ;;
     bear)
-        echo "FAIBASE DHCPC LVM_XEN_SERVER XEN" ;;
+        echo "FAIBASE $GRUB DHCPC LVM_XEN_SERVER XEN" ;;
     puma)
-        echo "FAIBASE DHCPC RAID_XEN_VIRTUAL" ;;
+        echo "FAIBASE $GRUB DHCPC RAID_XEN_VIRTUAL" ;;
     diskstation*)
 	echo "FAIBASE DISKLESS DISKTOOLS SYSADMIN FSF"
-        nogrub=1 ;;
+        ;;
     freestation7)
         echo "FAIBASE DISKLESS XORG TRISQUEL WORKSTATION FSF SYSADMIN MV"
-        nogrub=1 ;;
+        ;;
     freestation06)
         echo "FAIBASE DISKLESS XORG TRISQUEL WORKSTATION FSF SYSADMIN JAPANESE"
-        nogrub=1 ;;
+        ;;
     freestation*)
         echo "FAIBASE DISKLESS XORG TRISQUEL WORKSTATION FSF"
-        nogrub=1 ;;
+        ;;
     freetop-x60*)
-	echo "FAIBASE DHCPC XORG TRISQUEL WORKSTATION FSF"
+	echo "FAIBASE $GRUB DHCPC XORG TRISQUEL WORKSTATION FSF"
 	;;
     iwikiserver*)
 	echo "FAIBASE IKIWIKI SYSADMIN VM"
-	nogrub=1
 	;;
     jobserver*)
         echo "FAIBASE JOB SYSADMIN VM"
-        nogrub=1
         ;;
     mysqlserver*)
         echo "FAIBASE KVMGUEST SYSADMIN MYSQLD"
-        nogrub=1
         ;;
     streamstation*)
-        echo "FAIBASE DHCPC SYSADMIN STREAM LIBREPLANET"
+        echo "FAIBASE $GRUB DHCPC SYSADMIN STREAM LIBREPLANET"
         ;;
     freetop*)
-        echo "FAIBASE DHCPC SYSADMIN XORG TRISQUEL WORKSTATION LIBREPLANET"
+        echo "FAIBASE $GRUB DHCPC SYSADMIN XORG TRISQUEL WORKSTATION LIBREPLANET"
         ;;
     mwikiserver*)
 	echo "FAIBASE MEDIAWIKI SYSADMIN VM"
-	nogrub=1
 	;;
     printserver*)
 	echo "FAIBASE CUPS SYSADMIN VM"
-	nogrub=1
 	;;
     crmserver*)
 	echo "FAIBASE WWW CIVICRM SYSADMIN VM"
-	nogrub=1
 	;;
     crmdevserver*)
 	echo "FAIBASE WWW CIVICRM SYSADMIN VM MYSQLD"
-	nogrub=1
 	;;
     *)  
         echo "FAIBASE"
-	nogrub=1 
 	;;
 esac
-
-if [ $nogrub -eq 0 ]; then
-    (ifclass I386 || ifclass AMD64) && echo GRUB_PC
-fi
 
 exit 0
