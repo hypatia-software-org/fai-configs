@@ -1,0 +1,4 @@
+PACKAGES aptitude NAGIOS
+nagios3
+nsca
+nsca-client
