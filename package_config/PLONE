@@ -1,0 +1,23 @@
+PACKAGES aptitude PLONE
+aptitude
+build-essential
+libbz2-dev
+libbz2-dev
+libjpeg62-turbo-dev
+libreadline-dev
+libssl-dev
+libxml2-dev
+libxslt1-dev
+libz-dev
+locate
+openssl
+poppler-utils
+python-dev
+python-setuptools
+sudo
+wv
+nginx-full
+nginx-extras
+nano
+emacs24-nox unzip
+man-db

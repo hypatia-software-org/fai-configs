@@ -68,6 +68,9 @@ case $HOSTNAME in
     gnusocial*)
 	echo "FAIBASE WWW SYSADMIN VM MYSQLD"
 	;;
+    ploneserver*)
+	echo "FAIBASE WWW SYSADMIN VM MYSQLD PLONE"
+	;;
     nagios*)
 	echo "FAIBASE SYSADMIN VM MYSQLD NAGIOS WWW
     *)  
