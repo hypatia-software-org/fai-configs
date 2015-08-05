@@ -19,5 +19,6 @@ wv
 nginx-full
 nginx-extras
 nano
-emacs24-nox unzip
+emacs24-nox
+unzip
 man-db
