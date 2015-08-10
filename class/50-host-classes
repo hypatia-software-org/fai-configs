@@ -72,9 +72,7 @@ case $HOSTNAME in
 	echo "FAIBASE WWW SYSADMIN VM MYSQLD PLONE"
 	;;
     nagios*)
-	echo "FAIBASE SYSADMIN VM MYSQLD NAGIOS WWW
-    *)  
-        echo "FAIBASE"
+	echo "FAIBASE SYSADMIN VM MYSQLD NAGIOS WWW"
 	;;
 esac
 
