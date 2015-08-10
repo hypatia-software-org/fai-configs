@@ -73,6 +73,7 @@ case $HOSTNAME in
 	;;
     nagios*)
 	echo "FAIBASE SYSADMIN VM MYSQLD NAGIOS WWW"
+	;;
     *)  
         echo "FAIBASE"
 	;;
