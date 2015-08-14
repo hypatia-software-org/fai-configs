@@ -37,3 +37,4 @@ ntpdate
 ca-certificates
 bash-completion
 vim
+uptimed
