@@ -1,0 +1,4 @@
+#!/bin/bash
+
+fcopy -v /etc/network/interfaces
+
