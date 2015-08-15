@@ -36,5 +36,4 @@ guile-2.0-dev
 ntpdate
 ca-certificates
 bash-completion
-vim
 uptimed
