@@ -34,4 +34,6 @@ $ROOTCMD bash -c "echo 'console-data console-data/keymap/full select $KEYMAP' | 
 $ROOTCMD install-keymap $KEYMAP || true
 # dumpkeys | gzip -9f >$target/etc/console/boottime.kmap.gz
 
+locale-gen "en_US.utf8"
+
 exit $error
