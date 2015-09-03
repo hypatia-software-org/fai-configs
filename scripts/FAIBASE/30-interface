@@ -19,7 +19,6 @@ then
 	iface $NIC1 inet static
 	  address $IPADDR
 	  netmask $NETMASK
-	  broadcast $BROADCAST
 	  gateway $GATEWAYS
 EOF
     [ -n "$NETWORK" ] && echo "localnet $NETWORK" > $target/etc/networks
