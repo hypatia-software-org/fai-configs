@@ -7,3 +7,7 @@ tmux
 mosh
 sloccount
 nethogs
+unp
+iotop
+multitail
+nload
