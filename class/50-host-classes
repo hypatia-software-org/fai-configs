@@ -35,6 +35,9 @@ case $HOSTNAME in
     freestation*)
         echo "FAIBASE DISKLESS XORG TRISQUEL WORKSTATION FSF"
         ;;
+    zoneminder*)
+	echo "FAIBASE DISKLESS SYSADMIN FSF SYSADMIN ZONEMINDER"
+        ;;
     freetop-x60*)
 	echo "FAIBASE $GRUB NW_MGR XORG TRISQUEL WORKSTATION FSF"
 	;;
