@@ -74,6 +74,9 @@ case $HOSTNAME in
     nagios*)
 	echo "FAIBASE SYSADMIN VM MYSQLD NAGIOS WWW"
 	;;
+    shopserver0d*)
+	echo "FAIBASE SYSADMIN KOSA MYSQLD WWW"
+	;;
     kdev*)
 	echo "FAIBASE SYSADMIN KOSA VM MYSQLD PLONE WWW"
 	;;
