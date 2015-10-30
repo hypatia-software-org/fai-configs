@@ -10,5 +10,4 @@ wget
 apache2 
 php-cas 
 php5-mysql 
-mysql-server
 php5-gd 
