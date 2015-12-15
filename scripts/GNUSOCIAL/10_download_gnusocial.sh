@@ -10,7 +10,8 @@ if ! $ROOTCMD test -e /home/gnusocial/.ssh/id_rsa; then
 fi
 
 if ! $ROOTCMD echo | cd /home/gnusocial/ 
+    mkdir /var/www/statusnet/
     git clone https://git.gnu.io/gnu/gnu-social.git /home/gnusocial/gnu-social; then
     rm -rf /home/gnusocial/gnu-social/.git
-    mv /home/gnusocial/gnu-social/* /var/www/html
+    mv /home/gnusocial/gnu-social/* /var/www/statusnet/
 fi
