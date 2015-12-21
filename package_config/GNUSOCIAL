@@ -1,0 +1,21 @@
+PACKAGES aptitude GNUSOCIAL
+apache2
+mysql-server
+php5
+php5-mysql
+libapache2-mod-php5
+php-apc
+php5-intl
+vsftpd
+php5-cli
+php5-gd
+wget
+unzip
+curl
+mysql-server
+php5-cgi
+php5-curl
+php5-gd
+git
+ca-certificates
+openssl

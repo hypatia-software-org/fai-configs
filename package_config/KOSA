@@ -1,1 +1,13 @@
 PACKAGES aptitude KOSA
+screen
+mlocate
+ncdu
+unzip
+openssl
+htop
+emacs24-nox
+wget
+apache2 
+php-cas 
+php5-mysql 
+php5-gd 
