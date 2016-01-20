@@ -83,6 +83,9 @@ case $HOSTNAME in
     kdev*)
 	echo "FAIBASE SYSADMIN KOSA VM MYSQLD PLONE WWW"
 	;;
+    glamp*)
+	echo "FAIBASE MYSQLD PHP5 SYSADMIN WWW"
+	;;
     *)  
         echo "FAIBASE"
 	;;
