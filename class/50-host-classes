@@ -9,7 +9,7 @@ fi
 # use a list of classes for our demo machine                                                                                                   
 case $HOSTNAME in
     faiserver*)
-	echo "FAIBASE FAISEVER SYSADMIN VM"
+	echo "FAIBASE FAISERVER SYSADMIN VM"
         ;;
     demohost)
         echo "FAIBASE $GRUB DHCPC DEMO" ;;
