@@ -1,0 +1,4 @@
+PACKAGES aptitude PSQL
+postgresql
+postgresql-client
+python-psycopg2
