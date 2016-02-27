@@ -1,4 +1,4 @@
 #!/bin/bash
 
-$ROOTCMD sudo mkdir -p $GMG_PATH && $ROOTCMD sudo chown -hR mediagoblin:www-data $GMG_PATH
+$ROOTCMD mkdir -p $GMG_PATH && $ROOTCMD chown -hR mediagoblin:www-data $GMG_PATH
 
