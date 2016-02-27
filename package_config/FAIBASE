@@ -6,7 +6,7 @@ cron
 debconf-utils
 file
 hdparm
-jove
+emacs24-nox
 less
 linuxlogo
 nfs-common
@@ -45,3 +45,4 @@ tree
 iputils-tracepath
 elinks
 iptables
+fail2ban
