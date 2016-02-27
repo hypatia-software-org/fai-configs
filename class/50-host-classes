@@ -81,7 +81,7 @@ case $HOSTNAME in
 	echo "FAIBASE MYSQLD PHP5 SYSADMIN WWW"
 	;;
     gmg*)
-	echo "FAIBASE VM GMG SYSADMIN"
+	echo "FAIBASE VM PSQL GMG SYSADMIN"
 	;;
     *)  
         echo "FAIBASE"
