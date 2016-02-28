@@ -24,7 +24,7 @@ if [ ! -d mediagoblin ]; then
 
     if [ ! -d mediagoblin-libreplanet ]; then
 	sudo -u mediagoblin git clone https://vcs.fsf.org/git/mediagoblin-libreplanet.git
-	cp -r mediagoblin-libreplanet/mediagoblin-libreplanet mediagoblin/mediagoblin/plugins/libreplanet
+	cp -r mediagoblin-libreplanet/mediagoblin_libreplanet mediagoblin/mediagoblin/plugins/libreplanet
     fi
 
     cd mediagoblin
