@@ -5,6 +5,9 @@ python-dev
 python-lxml
 python-imaging
 python-virtualenv
+python-bcrypt
+python-gi
+python-gst0.10
 npm
 nodejs-legacy
 automake
