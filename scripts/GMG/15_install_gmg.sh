@@ -22,7 +22,7 @@ sed 's^GMG_SENDER_TOKEN^'$GMG_SENDER'^g' -i $target/etc/mediagoblin-templates/me
 
 sed 's^GMG_PATH_TOKEN^'$GMG_PATH'^g' -i $target/etc/nginx/mediagoblin-common.conf
 
-sed 's^GMG_FQDN_TOKEN^'$fqdn'^g' -i $target/etc/nginx/sites-available/mediagoblin.conf
+sed 's^GMG_FQDN_TOKEN^'$fqdn'^g' -i $target/etc/nginx/sites-available/mediagoblin
 
 # enable nginx config
-$ROOTCMD ln -s /etc/nginx/sites-available/mediagoblin.conf /etc/nginx/sites-enabled/mediagoblin.conf
+$ROOTCMD ln -s /etc/nginx/sites-available/mediagoblin /etc/nginx/sites-enabled/mediagoblin
