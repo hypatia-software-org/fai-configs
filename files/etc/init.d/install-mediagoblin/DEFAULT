@@ -1,6 +1,6 @@
 #/bin/bash
 
-cd "${GMG_PATH}"
+cd GMG_PATH_TOKEN
 if [ ! -d mediagoblin ]; then
 
     # Create the GMG user
