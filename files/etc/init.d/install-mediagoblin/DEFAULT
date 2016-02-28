@@ -1,0 +1,20 @@
+#/bin/bash
+
+cd "${GMG_PATH}"
+if [ ! -d mediagoblin ]; then
+
+    # Create the GMG user
+    sudo -u postgres createuser -A -D mediagoblin
+    # Crea te GMG database
+    sudo -u postgres createdb -E UNICODE -O mediagoblin mediagoblin
+
+    git clone git://git.savannah.gnu.org/mediagoblin.git -b stable
+
+    cd mediagoblin
+    git submodule init && git submodule update
+
+    ./bootstrap.sh && ./configure && make
+    mkdir user_dev && chmod 750 user_dev
+    ./bin/easy_install flup
+
+fi
