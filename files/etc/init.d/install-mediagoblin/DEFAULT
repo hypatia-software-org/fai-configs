@@ -19,10 +19,12 @@ if [ ! -d mediagoblin ]; then
 
     if [ ! -d mediagoblin-piwik ]; then
 	sudo -u mediagoblin git clone https://github.com/ayleph/mediagoblin-piwik
+	cp -r mediagoblin-piwik/piwik mediagoblin/mediagoblin/plugins/
     fi
 
     if [ ! -d mediagoblin-libreplanet ]; then
 	sudo -u mediagoblin git clone https://vcs.fsf.org/git/mediagoblin-libreplanet.git
+	cp -r mediagoblin-libreplanet/mediagoblin-libreplanet mediagoblin/mediagoblin/plugins/libreplanet
     fi
 
     cd mediagoblin
@@ -33,6 +35,9 @@ if [ ! -d mediagoblin ]; then
     sudo -u mediagoblin ./bin/easy_install flup
 
     sudo -u mediagoblin cp /etc/mediagoblin-templates/mediagoblin.ini mediagoblin_local.ini
+
+    # https://issues.mediagoblin.org/ticket/5373
+    sudo -u mediagoblin ./bin/easy_install flup==1.0.3.dev-20110405
 
     sudo -u mediagoblin ./bin/gmg dbupdate
 

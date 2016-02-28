@@ -67,8 +67,8 @@ mime_types = video/webm, application/ogg
 dimensions_match = False
 video_codecs = VP8 video, Theora
 [[mediagoblin.media_types.pdf]]
-[[mediagoblin_libreplanet]]
-[[mediagoblin_piwik]]
+[[mediagoblin.plugins.libreplanet]]
+[[mediagoblin.plugins.piwik]]
 PIWIK_DOMAIN = '*.media.libreplanet.org'
 PIWIK_LOCATION = 'piwik.fsf.org'
 PIWIK_SITEID = 11
