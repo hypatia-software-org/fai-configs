@@ -80,6 +80,9 @@ case $HOSTNAME in
     glamp*)
 	echo "FAIBASE MYSQLD PHP5 SYSADMIN WWW"
 	;;
+    gmg*libreplanet.org)
+	echo "FAIBASE VM PSQL GMG SYSADMIN LIBREPLANET"
+	;;
     gmg*)
 	echo "FAIBASE VM PSQL GMG SYSADMIN"
 	;;

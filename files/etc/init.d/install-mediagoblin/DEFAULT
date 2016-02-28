@@ -1,5 +1,6 @@
 #/bin/bash
-
+echo Installing GMG into GMG_PATH_TOKEN...
+(
 cd GMG_PATH_TOKEN
 if [ ! -d mediagoblin ]; then
 
@@ -14,14 +15,23 @@ if [ ! -d mediagoblin ]; then
     # Crea te GMG database
     sudo -u postgres createdb -E UNICODE -O mediagoblin mediagoblin
 
-    git clone git://git.savannah.gnu.org/mediagoblin.git -b stable
+    sudo -u mediagoblin git clone git://git.savannah.gnu.org/mediagoblin.git -b stable
 
     cd mediagoblin
-    git submodule init && git submodule update
+    sudo -u mediagoblin git submodule init && git submodule update
 
-    ./bootstrap.sh && ./configure && make
-    mkdir user_dev && chmod 750 user_dev
-    ./bin/easy_install flup
+    sudo -u mediagoblin ./bootstrap.sh && sudo -u mediagoblin ./configure && sudo -u mediagoblin make
+    sudo -u mediagoblin mkdir user_dev && sudo -u mediagoblin chmod 750 user_dev
+    sudo -u mediagoblin ./bin/easy_install flup
 
-    update-rc.d mediagoblin defaults
+    sudo -u mediagoblin cp /etc/mediagoblin-templates/mediagoblin.ini mediagoblin_local.ini
+
+    sudo -u mediagoblin ./bin/gmg dbupdate
+
+    update-rc.d mediagoblin-paster defaults
+    update-rc.d mediagoblin-celery-worker defaults
+    /etc/init.d/mediagoblin-paster start
+    /etc/init.d/mediagoblin-celery-worker start
 fi
+) >> /var/log/fai/install-mediagoblin.log
+echo Install Completed, started mediagoblin-paster and mediagoblin-celery-worker

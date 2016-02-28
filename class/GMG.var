@@ -1,1 +1,3 @@
 GMG_PATH=/srv/gmg
+GMG_SENDER=noreply@libreplanet.org
+GMG_LOGPATH=/var/log/mediagoblin
