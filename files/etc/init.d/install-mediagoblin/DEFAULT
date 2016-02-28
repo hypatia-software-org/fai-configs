@@ -23,4 +23,5 @@ if [ ! -d mediagoblin ]; then
     mkdir user_dev && chmod 750 user_dev
     ./bin/easy_install flup
 
+    update-rc.d mediagoblin defaults
 fi
