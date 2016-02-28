@@ -7,8 +7,8 @@ server {
     ## redirect http to https ##
     #rewrite        ^ https://$server_name$request_uri? permanent;
 
-    access_log /var/log/nginx/$HOSTNAME.$DOMAIN-access.log;
-    error_log /var/log/nginx/$HOSTNAME.$DOMAIN-error.log; 
+    access_log  /var/log/nginx/GMG_FQDN_TOKEN-ssl.access.log;
+     error_log  /var/log/nginx/GMG_FQDN_TOKEN-ssl.error.log; 
 }
 
 server {
@@ -16,8 +16,8 @@ server {
 
   include    /etc/nginx/mediagoblin-common.conf;
 
-  access_log  /var/log/nginx/$HOSTNAME.$DOMAIN-ssl.access.log;
-  error_log  /var/log/nginx/$HOSTNAME.$DOMAIN-ssl.error.log;
+  access_log  /var/log/nginx/GMG_FQDN_TOKEN-ssl.access.log;
+  error_log  /var/log/nginx/GMG_FQDN_TOKEN-ssl.error.log;
 
   ssl on;
 
