@@ -10,7 +10,7 @@ fcopy -Bv /etc/nginx/mediagoblin-common.conf
 
 # Add installer to boot
 $ROOTCMD update-rc.d install-mediagoblin defaults
-fqdn=$HOSTNAME.$DOMAIN
+fqdn=$HOSTNAME
 
 # Replace Tokens
 sed 's^GMG_PATH_TOKEN^'$GMG_PATH'^g' -i $target/etc/init.d/install-mediagoblin
