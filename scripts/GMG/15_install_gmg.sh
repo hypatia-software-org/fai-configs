@@ -1,5 +1,5 @@
 #!/bin/bash
 
-fcopy -v /etc/init.d/
-$ROOTCMD update-rc.d mediagoblin defaults
+fcopy -v /etc/init.d/install-mediagoblin
+$ROOTCMD update-rc.d install-mediagoblin defaults
 
