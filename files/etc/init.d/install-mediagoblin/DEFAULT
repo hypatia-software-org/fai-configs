@@ -17,6 +17,14 @@ if [ ! -d mediagoblin ]; then
 
     sudo -u mediagoblin git clone git://git.savannah.gnu.org/mediagoblin.git -b stable
 
+    if [ ! -d mediagoblin-piwik ]; then
+	sudo -u mediagoblin git clone https://github.com/ayleph/mediagoblin-piwik
+    fi
+
+    if [ ! -d mediagoblin-libreplanet ]; then
+	sudo -u mediagoblin git clone https://vcs.fsf.org/git/mediagoblin-libreplanet.git
+    fi
+
     cd mediagoblin
     sudo -u mediagoblin git submodule init && git submodule update
 
