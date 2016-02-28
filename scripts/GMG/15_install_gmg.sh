@@ -4,7 +4,7 @@
 fcopy -Bv /etc/init.d/install-mediagoblin
 fcopy -Bv /etc/init.d/mediagoblin-paster
 fcopy -Bv /etc/init.d/mediagoblin-celery-worker
-fcopy -Bv /etc/mediagoblin-templates/mediagolbin.ini
+fcopy -Bv /etc/mediagoblin-templates/mediagoblin.ini
 fcopy -Bv /etc/nginx/sites-available/mediagoblin
 fcopy -Bv /etc/nginx/mediagoblin-common.conf
 

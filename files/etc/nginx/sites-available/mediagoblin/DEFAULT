@@ -5,10 +5,10 @@ server {
     include    /etc/nginx/mediagoblin-common.conf;
 
     ## redirect http to https ##
-    rewrite        ^ https://$server_name$request_uri? permanent;
+    #rewrite        ^ https://$server_name$request_uri? permanent;
 
-    access_log /var/log/nginx/media.libreplanet.org-access.log;
-    error_log /var/log/nginx/media.libreplanet.org-error.log; 
+    access_log /var/log/nginx/$HOSTNAME.$DOMAIN-access.log;
+    error_log /var/log/nginx/$HOSTNAME.$DOMAIN-error.log; 
 }
 
 server {
@@ -16,8 +16,8 @@ server {
 
   include    /etc/nginx/mediagoblin-common.conf;
 
-  access_log  /var/log/nginx/media.libreplanet.org-ssl.access.log;
-  error_log  /var/log/nginx/media.libreplanet.org-ssl.error.log;
+  access_log  /var/log/nginx/$HOSTNAME.$DOMAIN-ssl.access.log;
+  error_log  /var/log/nginx/$HOSTNAME.$DOMAIN-ssl.error.log;
 
   ssl on;
 

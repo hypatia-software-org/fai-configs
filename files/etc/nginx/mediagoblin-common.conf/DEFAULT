@@ -28,22 +28,22 @@ server {
 
  # MediaGoblin's stock static files: CSS, JS, etc.
  location /mgoblin_static/ {
-    alias /srv/mediagoblin.example.org/mediagoblin/mediagoblin/static/;
+    alias GMG_PATH_TOKEN/mediagoblin/mediagoblin/static/;
  }
 
  # Instance specific media:
  location /mgoblin_media/ {
-    alias /srv/mediagoblin.example.org/mediagoblin/user_dev/media/public/;
+    alias GMG_PATH_TOKEN/mediagoblin/user_dev/media/public/;
  }
 
  # Theme static files (usually symlinked in)
  location /theme_static/ {
-    alias /srv/mediagoblin.example.org/mediagoblin/user_dev/theme_static/;
+    alias GMG_PATH_TOKEN/mediagoblin/user_dev/theme_static/;
  }
 
  # Plugin static files (usually symlinked in)
  location /plugin_static/ {
-    alias /srv/mediagoblin.example.org/mediagoblin/user_dev/plugin_static/;
+    alias GMG_PATH_TOKEN/mediagoblin/user_dev/plugin_static/;
  }
 
  # Mounting MediaGoblin itself via FastCGI.
