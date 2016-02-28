@@ -26,3 +26,7 @@ sed 's^GMG_FQDN_TOKEN^'$fqdn'^g' -i $target/etc/nginx/sites-available/mediagobli
 
 # enable nginx config
 $ROOTCMD ln -s /etc/nginx/sites-available/mediagoblin /etc/nginx/sites-enabled/mediagoblin
+
+if [ ! -f $target//etc/nginx/sites-enabled/default ]; then
+	$ROOTCMD rm /etc/nginx/sites-enabled/default
+fi
