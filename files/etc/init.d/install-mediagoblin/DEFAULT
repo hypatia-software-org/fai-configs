@@ -27,17 +27,18 @@ if [ ! -d mediagoblin ]; then
 	cp -r mediagoblin-libreplanet/mediagoblin_libreplanet mediagoblin/mediagoblin/plugins/libreplanet
     fi
 
+    chown -R mediagoblin.www-data mediagoblin/mediagoblin/plugins/
+
     cd mediagoblin
     sudo -u mediagoblin git submodule init && git submodule update
 
     sudo -u mediagoblin ./bootstrap.sh && sudo -u mediagoblin ./configure && sudo -u mediagoblin make
     sudo -u mediagoblin mkdir user_dev && sudo -u mediagoblin chmod 750 user_dev
-    sudo -u mediagoblin ./bin/easy_install flup
-
-    sudo -u mediagoblin cp /etc/mediagoblin-templates/mediagoblin.ini mediagoblin_local.ini
-
+    #sudo -u mediagoblin ./bin/easy_install flup
     # https://issues.mediagoblin.org/ticket/5373
     sudo -u mediagoblin ./bin/easy_install flup==1.0.3.dev-20110405
+
+    sudo -u mediagoblin cp /etc/mediagoblin-templates/mediagoblin.ini mediagoblin_local.ini
 
     sudo -u mediagoblin ./bin/gmg dbupdate
 
