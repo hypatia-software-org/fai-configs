@@ -1,14 +1,14 @@
 server {
     listen   80;
-    server_name GMG_FQDN_TOKEN;
+    server_name SERVERNAME_TOKEN;
 
     include    /etc/nginx/mediagoblin-common.conf;
 
     ## redirect http to https ##
     rewrite        ^ https://$server_name$request_uri? permanent;
 
-    access_log  /var/log/nginx/GMG_FQDN_TOKEN-ssl.access.log;
-    error_log  /var/log/nginx/GMG_FQDN_TOKEN-ssl.error.log;
+    access_log  /var/log/nginx/SERVERNAME_TOKEN-ssl.access.log;
+    error_log  /var/log/nginx/SERVERNAME_TOKEN-ssl.error.log;
 }
 
 server {
@@ -16,8 +16,8 @@ server {
 
   include    /etc/nginx/mediagoblin-common.conf;
 
-  access_log  /var/log/nginx/GMG_FQDN_TOKEN-ssl.access.log;
-  error_log  /var/log/nginx/GMG_FQDN_TOKEN-ssl.error.log;
+  access_log  /var/log/nginx/SERVERNAME_TOKEN-ssl.access.log;
+  error_log  /var/log/nginx/SERVERNAME_TOKEN-ssl.error.log;
 
   ssl on;
 
@@ -25,8 +25,8 @@ server {
   ssl_session_cache shared:SSL:10m;
   ssl_session_timeout 10m;
 
-  ssl_certificate /etc/letsencrypt/live/GMG_FQDN_TOKEN/fullchain.pem;
-  ssl_certificate_key /etc/letsencrypt/live/GMG_FQDN_TOKEN/privkey.pem;
+  ssl_certificate /etc/letsencrypt/live/SERVERNAME_TOKEN/fullchain.pem;
+  ssl_certificate_key /etc/letsencrypt/live/SERVERNAME_TOKEN/privkey.pem;
 
   ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
   ssl_prefer_server_ciphers on;
