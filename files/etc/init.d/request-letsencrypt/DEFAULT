@@ -2,6 +2,6 @@
 
 if [ ! -d /etc/letsencrypt/archive/HOSTNAME_TOKEN ]; then
     cd /srv/letsencrypt
-    /letsencrypt-auto certonly --standalone --agree-tos --email LETSENCRYPT_EMAIL_TOKEN -d HOSTNAME_TOKEN -d SERVERNAME_TOKEN
+    ./letsencrypt-auto certonly --standalone --agree-tos --email LETSENCRYPT_EMAIL_TOKEN -d HOSTNAME_TOKEN -d SERVERNAME_TOKEN
 fi
 
