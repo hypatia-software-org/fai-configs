@@ -17,8 +17,8 @@ sed 's^GMG_PATH_TOKEN^'$GMG_PATH'^g' -i $target/etc/init.d/install-mediagoblin
 sed 's^GMG_PATH_TOKEN^'$GMG_PATH'^g' -i $target/etc/init.d/mediagoblin-celery-worker
 sed 's^GMG_PATH_TOKEN^'$GMG_PATH'^g' -i $target/etc/init.d/mediagoblin-paster
 
-sed 's^GMG_PATH_TOKEN^'$GMG_PATH'^g' -i $target/etc/mediagoblin-templates/mediagolbin.ini
-sed 's^GMG_SENDER_TOKEN^'$GMG_SENDER'^g' -i $target/etc/mediagoblin-templates/mediagolbin.ini
+sed 's^GMG_PATH_TOKEN^'$GMG_PATH'^g' -i $target/etc/mediagoblin-templates/mediagoblin.ini
+sed 's^GMG_SENDER_TOKEN^'$GMG_SENDER'^g' -i $target/etc/mediagoblin-templates/mediagoblin.ini
 
 sed 's^GMG_PATH_TOKEN^'$GMG_PATH'^g' -i $target/etc/nginx/mediagoblin-common.conf
 
