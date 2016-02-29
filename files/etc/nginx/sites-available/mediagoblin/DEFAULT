@@ -5,10 +5,10 @@ server {
     include    /etc/nginx/mediagoblin-common.conf;
 
     ## redirect http to https ##
-    #rewrite        ^ https://$server_name$request_uri? permanent;
+    rewrite        ^ https://$server_name$request_uri? permanent;
 
     access_log  /var/log/nginx/GMG_FQDN_TOKEN-ssl.access.log;
-     error_log  /var/log/nginx/GMG_FQDN_TOKEN-ssl.error.log; 
+    error_log  /var/log/nginx/GMG_FQDN_TOKEN-ssl.error.log;
 }
 
 server {
