@@ -39,6 +39,7 @@ if [ ! -d mediagoblin ]; then
     sudo -H -u mediagoblin ./bin/easy_install flup==1.0.3.dev-20110405
 
     sudo -H -u mediagoblin cp /etc/mediagoblin-templates/mediagoblin.ini mediagoblin_local.ini
+    sudo -H -u mediagoblin cp /etc/mediagoblin-templates/paste.ini paste_local.ini
 
     sudo -H -u mediagoblin ./bin/gmg dbupdate
 
