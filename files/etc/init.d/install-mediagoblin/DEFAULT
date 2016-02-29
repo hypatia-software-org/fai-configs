@@ -5,42 +5,42 @@ cd GMG_PATH_TOKEN
 if [ ! -d mediagoblin ]; then
 
     # Create the GMG user
-    sudo -u postgres psql -c "UPDATE pg_database SET datistemplate = FALSE WHERE datname = 'template1'"
-    sudo -u postgres psql -c "DROP DATABASE template1"
-    sudo -u postgres psql -c "CREATE DATABASE template1 WITH TEMPLATE = template0 ENCODING='UNICODE' LC_COLLATE='en_US.UTF8' LC_CTYPE='en_US.UTF8'"
-    sudo -u postgres psql -c "UPDATE pg_database SET datistemplate = TRUE WHERE datname = 'template1'"
-    sudo -u postgres psql -c "UPDATE pg_database SET datallowconn = FALSE WHERE datname = 'template1'"
+    sudo -H -u postgres psql -c "UPDATE pg_database SET datistemplate = FALSE WHERE datname = 'template1'"
+    sudo -H -u postgres psql -c "DROP DATABASE template1"
+    sudo -H -u postgres psql -c "CREATE DATABASE template1 WITH TEMPLATE = template0 ENCODING='UNICODE' LC_COLLATE='en_US.UTF8' LC_CTYPE='en_US.UTF8'"
+    sudo -H -u postgres psql -c "UPDATE pg_database SET datistemplate = TRUE WHERE datname = 'template1'"
+    sudo -H -u postgres psql -c "UPDATE pg_database SET datallowconn = FALSE WHERE datname = 'template1'"
 
-    sudo -u postgres createuser -A -D mediagoblin
+    sudo -H -u postgres createuser -A -D mediagoblin
     # Crea te GMG database
-    sudo -u postgres createdb -E UNICODE -O mediagoblin mediagoblin
+    sudo -H -u postgres createdb -E UNICODE -O mediagoblin mediagoblin
 
-    sudo -u mediagoblin git clone git://git.savannah.gnu.org/mediagoblin.git -b stable
+    sudo -H -u mediagoblin git clone git://git.savannah.gnu.org/mediagoblin.git -b stable
 
     if [ ! -d mediagoblin-piwik ]; then
-	sudo -u mediagoblin git clone https://github.com/ayleph/mediagoblin-piwik
+	sudo -H -u mediagoblin git clone https://github.com/ayleph/mediagoblin-piwik
 	cp -r mediagoblin-piwik/piwik mediagoblin/mediagoblin/plugins/
     fi
 
     if [ ! -d mediagoblin-libreplanet ]; then
-	sudo -u mediagoblin git clone https://vcs.fsf.org/git/mediagoblin-libreplanet.git
+	sudo -H -u mediagoblin git clone https://vcs.fsf.org/git/mediagoblin-libreplanet.git
 	cp -r mediagoblin-libreplanet/mediagoblin_libreplanet mediagoblin/mediagoblin/plugins/libreplanet
     fi
 
     chown -R mediagoblin.www-data mediagoblin/mediagoblin/plugins/
 
     cd mediagoblin
-    sudo -u mediagoblin git submodule init && git submodule update
+    sudo -H -u mediagoblin git submodule init && git submodule update
 
-    sudo -u mediagoblin ./bootstrap.sh && sudo -u mediagoblin ./configure && sudo -u mediagoblin make
-    sudo -u mediagoblin mkdir user_dev && sudo -u mediagoblin chmod 750 user_dev
-    #sudo -u mediagoblin ./bin/easy_install flup
+    sudo -H -u mediagoblin ./bootstrap.sh && sudo -H -u mediagoblin ./configure && sudo -H -u mediagoblin make
+    sudo -H -u mediagoblin mkdir user_dev && sudo -H -u mediagoblin chmod 750 user_dev
+    #sudo -H -u mediagoblin ./bin/easy_install flup
     # https://issues.mediagoblin.org/ticket/5373
-    sudo -u mediagoblin ./bin/easy_install flup==1.0.3.dev-20110405
+    sudo -H -u mediagoblin ./bin/easy_install flup==1.0.3.dev-20110405
 
-    sudo -u mediagoblin cp /etc/mediagoblin-templates/mediagoblin.ini mediagoblin_local.ini
+    sudo -H -u mediagoblin cp /etc/mediagoblin-templates/mediagoblin.ini mediagoblin_local.ini
 
-    sudo -u mediagoblin ./bin/gmg dbupdate
+    sudo -H -u mediagoblin ./bin/gmg dbupdate
 
     update-rc.d mediagoblin-paster defaults
     update-rc.d mediagoblin-celery-worker defaults
