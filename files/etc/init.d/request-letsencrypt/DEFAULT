@@ -1,7 +1,7 @@
 #!/bin/bash
 
-if [ ! -d /etc/letsencrypt/archive/$HOSTNAME ]; then
+if [ ! -d /etc/letsencrypt/archive/HOSTNAME_TOKEN ]; then
     cd /srv/letsencrypt
-    /letsencrypt-auto certonly --standalone --agree-tos --email $LETSENCRYPT_EMAIL -d $HOSTNAME -d $SERVERNAME
+    /letsencrypt-auto certonly --standalone --agree-tos --email LETSENCRYPT_EMAIL_TOKEN -d HOSTNAME_TOKEN -d SERVERNAME_TOKEN
 fi
 
