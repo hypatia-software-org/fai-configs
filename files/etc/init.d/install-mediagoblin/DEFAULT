@@ -3,7 +3,7 @@ echo Installing GMG into GMG_PATH_TOKEN...
 (
 cd GMG_PATH_TOKEN
 if [ ! -d mediagoblin ]; then
-
+   /etc/init.d/postgresql start
     # Create the GMG user
     sudo -H -u postgres psql -c "UPDATE pg_database SET datistemplate = FALSE WHERE datname = 'template1'"
     sudo -H -u postgres psql -c "DROP DATABASE template1"
@@ -47,5 +47,5 @@ if [ ! -d mediagoblin ]; then
     /etc/init.d/mediagoblin-paster start
     /etc/init.d/mediagoblin-celery-worker start
 fi
-) >> /var/log/fai/install-mediagoblin.log
+) &>> /var/log/fai/install-mediagoblin.log
 echo Install Completed, started mediagoblin-paster and mediagoblin-celery-worker
