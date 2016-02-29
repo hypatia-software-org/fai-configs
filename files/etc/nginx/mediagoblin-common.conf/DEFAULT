@@ -1,4 +1,3 @@
-server {
  #################################################
  # Stock useful config options, but ignore them :)
  #################################################
@@ -56,4 +55,3 @@ server {
     fastcgi_param PATH_INFO $fastcgi_script_name;
     fastcgi_param SCRIPT_NAME "";
  }
-}
