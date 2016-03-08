@@ -80,6 +80,12 @@ case $HOSTNAME in
     kdev*)
 	echo "FAIBASE SYSADMIN KOSA VM MYSQLD PLONE WWW"
 	;;
+    dcimserver*)
+	echo "FAIBASE SYSADMIN VM WWW MYSQLD ODCIM"
+	;;
+    irc*)
+	echo "FAIBASE SYSADMIN KOSA SYSADMIN VM WWW LETSENCRYPT IRC"
+	;;
     *)  
         echo "FAIBASE"
 	;;

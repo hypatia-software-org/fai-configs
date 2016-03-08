@@ -1,5 +1,5 @@
 PACKAGES aptitude SYSADMIN
-emacs23-nox
+emacs24-nox
 screen
 curl
 vim
