@@ -1,0 +1,22 @@
+PACKAGES aptitude LETSENCRYPT
+git-core
+augeas-lenses
+binutils
+cpp
+cpp-4.8
+dialog
+gcc
+gcc-4.8
+libasan0
+libatomic1
+libaugeas0
+libcloog-isl4
+libffi-dev
+libgcc-4.8-dev
+libgomp1
+libisl10
+libitm1
+libmpc3
+libmpfr4
+libquadmath0
+libtsan0

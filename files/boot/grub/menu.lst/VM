@@ -1,0 +1,7 @@
+default=0
+timeout=0
+
+title  VM kernel
+root   (hd0,0)
+kernel /vmlinuz root=/dev/xvda2 ro elevator=noop console=hvc0 xencons=tty
+initrd /initrd.img

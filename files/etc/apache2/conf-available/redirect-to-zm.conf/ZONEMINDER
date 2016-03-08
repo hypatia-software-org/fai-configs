@@ -1,0 +1,6 @@
+# File managed by fai.
+# Local changes will be overwritten.
+# Make changes to fai-configs/files/etc/apache2/*
+
+RedirectMatch temp ^/$ /zm
+

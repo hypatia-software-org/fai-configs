@@ -1,0 +1,52 @@
+#/bin/bash
+echo Installing GMG into GMG_PATH_TOKEN...
+(
+cd GMG_PATH_TOKEN
+if [ ! -d mediagoblin ]; then
+   /etc/init.d/postgresql start
+    # Create the GMG user
+    sudo -H -u postgres psql -c "UPDATE pg_database SET datistemplate = FALSE WHERE datname = 'template1'"
+    sudo -H -u postgres psql -c "DROP DATABASE template1"
+    sudo -H -u postgres psql -c "CREATE DATABASE template1 WITH TEMPLATE = template0 ENCODING='UNICODE' LC_COLLATE='en_US.UTF8' LC_CTYPE='en_US.UTF8'"
+    sudo -H -u postgres psql -c "UPDATE pg_database SET datistemplate = TRUE WHERE datname = 'template1'"
+    sudo -H -u postgres psql -c "UPDATE pg_database SET datallowconn = FALSE WHERE datname = 'template1'"
+
+    sudo -H -u postgres createuser -A -D mediagoblin
+    # Crea te GMG database
+    sudo -H -u postgres createdb -E UNICODE -O mediagoblin mediagoblin
+
+    sudo -H -u mediagoblin git clone git://git.savannah.gnu.org/mediagoblin.git -b stable
+
+    if [ ! -d mediagoblin-piwik ]; then
+	sudo -H -u mediagoblin git clone https://github.com/ayleph/mediagoblin-piwik
+	cp -r mediagoblin-piwik/piwik mediagoblin/mediagoblin/plugins/
+    fi
+
+    if [ ! -d mediagoblin-libreplanet ]; then
+	sudo -H -u mediagoblin git clone https://vcs.fsf.org/git/mediagoblin-libreplanet.git
+	cp -r mediagoblin-libreplanet/mediagoblin_libreplanet mediagoblin/mediagoblin/plugins/libreplanet
+    fi
+
+    chown -R mediagoblin.www-data mediagoblin/mediagoblin/plugins/
+
+    cd mediagoblin
+    sudo -H -u mediagoblin git submodule init && git submodule update
+
+    sudo -H -u mediagoblin ./bootstrap.sh && sudo -H -u mediagoblin ./configure && sudo -H -u mediagoblin make
+    sudo -H -u mediagoblin mkdir user_dev && sudo -H -u mediagoblin chmod 750 user_dev
+    #sudo -H -u mediagoblin ./bin/easy_install flup
+    # https://issues.mediagoblin.org/ticket/5373
+    sudo -H -u mediagoblin ./bin/easy_install flup==1.0.3.dev-20110405
+
+    sudo -H -u mediagoblin cp /etc/mediagoblin-templates/mediagoblin.ini mediagoblin_local.ini
+    sudo -H -u mediagoblin cp /etc/mediagoblin-templates/paste.ini paste_local.ini
+
+    sudo -H -u mediagoblin ./bin/gmg dbupdate
+
+    update-rc.d mediagoblin-paster defaults
+    update-rc.d mediagoblin-celery-worker defaults
+    /etc/init.d/mediagoblin-paster start
+    /etc/init.d/mediagoblin-celery-worker start
+fi
+) &>> /var/log/fai/install-mediagoblin.log
+echo Install Completed, started mediagoblin-paster and mediagoblin-celery-worker

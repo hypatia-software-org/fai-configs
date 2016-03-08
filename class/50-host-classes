@@ -9,20 +9,14 @@ fi
 # use a list of classes for our demo machine                                                                                                   
 case $HOSTNAME in
     faiserver*)
-	echo "FAIBASE FAISEVER SYSADMIN VM"
+	echo "FAIBASE FAISERVER SYSADMIN VM"
         ;;
-    demohost)
-        echo "FAIBASE $GRUB DHCPC DEMO" ;;
+    nekohost)
+        echo "FAIBASE $GRUB DHCPC DEMO"
+        ;;
     rms)
-        echo "FAIBASE $GRUB DHCPC DEMO XORG TRISQUEL RMS";;
-    gnomehost)
-        echo "FAIBASE $GRUB DHCPC DEMO XORG GNOME";;
-    atom*)
-        echo "FAIBASE $GRUB DHCPC DEMO" ;;
-    bear)
-        echo "FAIBASE $GRUB DHCPC LVM_XEN_SERVER XEN" ;;
-    puma)
-        echo "FAIBASE $GRUB DHCPC RAID_XEN_VIRTUAL" ;;
+        echo "FAIBASE $GRUB DHCPC DEMO XORG TRISQUEL RMS"
+	;;
     diskstation*)
 	echo "FAIBASE DISKLESS DISKTOOLS SYSADMIN FSF"
         ;;
@@ -34,6 +28,9 @@ case $HOSTNAME in
         ;;
     freestation*)
         echo "FAIBASE DISKLESS XORG TRISQUEL WORKSTATION FSF"
+        ;;
+    zoneminder*)
+	echo "FAIBASE SYSADMIN FSF ZONEMINDER MYSQLD"
         ;;
     freetop-x60*)
 	echo "FAIBASE $GRUB NW_MGR XORG TRISQUEL WORKSTATION FSF"
@@ -48,10 +45,10 @@ case $HOSTNAME in
         echo "FAIBASE KVMGUEST SYSADMIN MYSQLD"
         ;;
     streamstation*)
-        echo "FAIBASE $GRUB SYSADMIN STREAM LIBREPLANET"
+        echo "FAIBASE $GRUB SYSADMIN STREAM XORG TRISQUEL LPCONF"
         ;;
     freetop*)
-        echo "FAIBASE $GRUB NW_MGR SYSADMIN XORG TRISQUEL WORKSTATION LIBREPLANET"
+        echo "FAIBASE $GRUB NW_MGR SYSADMIN XORG TRISQUEL WORKSTATION LPCONF 3DPRINT"
         ;;
     mwikiserver*)
 	echo "FAIBASE MEDIAWIKI SYSADMIN VM"
@@ -69,7 +66,7 @@ case $HOSTNAME in
 	echo "FAIBASE WWW CIVICRM SYSADMIN VM MYSQLD"
 	;;
     gnusocial*)
-	echo "FAIBASE WWW SYSADMIN VM MYSQLD"
+	echo "FAIBASE WWW SYSADMIN VM MYSQLD GNUSOCIAL YOURLS"
 	;;
     nagios*)
 	echo "FAIBASE SYSADMIN VM MYSQLD NAGIOS WWW"
@@ -85,6 +82,15 @@ case $HOSTNAME in
 	;;
     irc*)
 	echo "FAIBASE SYSADMIN KOSA SYSADMIN VM WWW LETSENCRYPT IRC"
+	;;
+    glamp*)
+	echo "FAIBASE MYSQLD PHP5 SYSADMIN WWW"
+	;;
+    gmg*libreplanet.org)
+	echo "FAIBASE VM PSQL GMG SYSADMIN LETSENCRYPT LIBREPLANET"
+	;;
+    gmg*)
+	echo "FAIBASE VM PSQL GMG SYSADMIN LETSENCRYPT"
 	;;
     *)  
         echo "FAIBASE"

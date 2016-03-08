@@ -1,0 +1,17 @@
+PACKAGES aptitude GMG
+git-core
+python
+python-dev
+python-lxml
+python-imaging
+python-virtualenv
+python-bcrypt
+python-gi
+python-gst0.10
+npm
+nodejs-legacy
+automake
+nginx
+gstreamer1.0-tools
+gir1.2-gstreamer-1.0
+gir1.2-gst-plugins-base-1.0
