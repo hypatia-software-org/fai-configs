@@ -1,6 +1,9 @@
-PACKAGES aptitude
-
+PACKAGES aptitude STREAM
 vlc
-gstreamer0.10
+mplayer
+mpv
+gir1.2-clutter-gst-1.0
 gstreamer1.0-x
-gstreamer0.10-plugins-good
+xrandr
+gstreamer1.0-plugins-bad
+python3.4
