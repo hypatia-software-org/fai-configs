@@ -46,9 +46,15 @@ case $HOSTNAME in
         ;;
     streamstation*)
         echo "FAIBASE $GRUB SYSADMIN STREAM XORG TRISQUEL LPCONF"
+	;;
+    streamtop*)
+        echo "FAIBASE $GRUB SYSADMIN STREAM XORG TRISQUEL LPCONF"
         ;;
     freetop*)
-        echo "FAIBASE $GRUB NW_MGR SYSADMIN XORG TRISQUEL WORKSTATION LPCONF 3DPRINT"
+        echo "FAIBASE $GRUB NW_MGR SYSADMIN XORG TRISQUEL WORKSTATION 3DPRINT"
+        ;;
+    freetop*)
+        echo "FAIBASE $GRUB NW_MGR SYSADMIN XORG TRISQUEL WORKSTATION LPCONF"
         ;;
     mwikiserver*)
 	echo "FAIBASE MEDIAWIKI SYSADMIN VM"
