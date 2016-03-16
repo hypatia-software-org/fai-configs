@@ -1,0 +1,6 @@
+disk_config disk1 disklabel:msdos bootable:1 fstabkey:uuid
+
+primary /      10G        ext4  rw,noatime,errors=remount-ro
+primary /home  100-100%  xfs  rw,noatime,nosuid,nodev
+primary swap   2G swap  rw                   
+
