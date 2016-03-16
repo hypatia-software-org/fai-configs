@@ -25,3 +25,11 @@ STOP_ON_ERROR=700
 
 # use the new partitioning tool
 USE_SETUP_STORAGE=1
+
+# These values need to be in both fai.conf and the config space:
+
+FAI_CONFIG_SRC=https://vcs.fsf.org/git/fai-configs.git
+
+MNTPOINT=/srv/fai/mirror
+
+FAI=/srv/fai/config
