@@ -1,3 +1,4 @@
 [SeatDefaults]
 greeter-hide-users=false
 allow-guest=false
+greeter-show-manual-login=true
