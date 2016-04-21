@@ -35,6 +35,9 @@ case $HOSTNAME in
     freetop-x60*)
 	echo "FAIBASE $GRUB NW_MGR XORG TRISQUEL WORKSTATION FSF"
 	;;
+    contop*)
+	echo "FAIBASE $GRUB NW_MGR XORG TRISQUEL WORKSTATION FSF CONTOP"
+	;;
     iwikiserver*)
 	echo "FAIBASE IKIWIKI SYSADMIN VM"
 	;;
