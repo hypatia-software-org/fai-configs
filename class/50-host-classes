@@ -57,6 +57,11 @@ case $HOSTNAME in
         echo "FAIBASE $GRUB NW_MGR SYSADMIN XORG TRISQUEL WORKSTATION LAPTOP 3DPRINT"
         ;;
 
+    wwwjail)
+	echo "JAILBASE WWW"
+	;;
+	
+
     libretop*)
         echo "FAIBASE $GRUB NW_MGR SYSADMIN XORG TRISQUEL WORKSTATION LAPTOP LPCONF"
         ;;
