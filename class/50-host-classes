@@ -56,12 +56,9 @@ case $HOSTNAME in
     freetop*)
         echo "FAIBASE $GRUB NW_MGR SYSADMIN XORG TRISQUEL WORKSTATION LAPTOP 3DPRINT"
         ;;
-
-    wwwjail)
+    wwwjail*)
 	echo "JAILBASE WWW"
 	;;
-	
-
     libretop*)
         echo "FAIBASE $GRUB NW_MGR SYSADMIN XORG TRISQUEL WORKSTATION LAPTOP LPCONF"
         ;;
