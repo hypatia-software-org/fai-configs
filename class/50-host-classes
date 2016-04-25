@@ -17,6 +17,9 @@ case $HOSTNAME in
     rms)
         echo "FAIBASE $GRUB DHCPC DEMO XORG TRISQUEL RMS"
 	;;
+    ircjail*)
+	echo "JAILBASE"
+	;;
     diskstation*)
 	echo "FAIBASE DISKLESS DISKTOOLS SYSADMIN FSF"
         ;;
@@ -103,9 +106,6 @@ case $HOSTNAME in
 	;;
     gmg*)
 	echo "FAIBASE VM PSQL GMG SYSADMIN LETSENCRYPT"
-	;;
-    ircjail*)
-	echo "JAILBASE"
 	;;
     *)  
         echo "FAIBASE"
