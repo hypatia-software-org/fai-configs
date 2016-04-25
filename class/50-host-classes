@@ -104,6 +104,9 @@ case $HOSTNAME in
     gmg*)
 	echo "FAIBASE VM PSQL GMG SYSADMIN LETSENCRYPT"
 	;;
+    ircjail*)
+	echo "JAILBASE UIRCD"
+	;;
     *)  
         echo "FAIBASE"
 	;;
