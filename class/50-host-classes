@@ -105,7 +105,7 @@ case $HOSTNAME in
 	echo "FAIBASE VM PSQL GMG SYSADMIN LETSENCRYPT"
 	;;
     ircjail*)
-	echo "JAILBASE UIRCD"
+	echo "JAILBASE"
 	;;
     *)  
         echo "FAIBASE"
