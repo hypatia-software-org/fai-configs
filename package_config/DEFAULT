@@ -6,8 +6,7 @@ PACKAGES aptitude CHROOT
 linux-image-generic
 
 PACKAGES aptitude JAILBASE
--linux-image-generic -initramfs-tools
--memtest86
+linux-image-generic- initramfs-tools- memtest86-
 
 PACKAGES aptitude AMD64
 linux-image-generic initramfs-tools
