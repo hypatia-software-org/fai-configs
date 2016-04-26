@@ -7,7 +7,7 @@
 # nfs://<install server>/$FAI_CONFIGDIR
 # supported URL-types: nfs, file, cvs, cvs+ssh, svn+file, svn+http,
 # git, git+http, hg+http, tarball via http
-FAI_CONFIG_SRC=git+ssh://git@vcs.fsf.org:fai-configs.git
+FAI_CONFIG_SRC=nfs://10.0.3.1/srv/git/fai-configs
 
 # LOGUSER: an account on the install server which saves all log-files
 # and which can change the kernel that is booted via network.
@@ -31,7 +31,7 @@ FAI_LOGPROTO=ssh
 # Do not change them unless you know what you are doing!
 
 # mount point where the mirror will be mounted
-MNTPOINT=/srv/fai/mirror
+MNTPOINT=/media/mirror
 
 # the local configuration directory on the install client
 FAI=/srv/fai/config
