@@ -1,2 +1,3 @@
 PACKAGES aptitude
 openssh-server
+linux-image-generic- initramfs-tools- memtest86-
