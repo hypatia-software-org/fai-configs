@@ -1,3 +1,4 @@
 PACKAGES aptitude
 openssh-server
+fai-client
 linux-image-generic- memtest86-
