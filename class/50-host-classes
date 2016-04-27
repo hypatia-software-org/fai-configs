@@ -20,6 +20,9 @@ case $HOSTNAME in
     ircjail*)
 	echo "JAILBASE"
 	;;
+    shelljail*)
+	echo "JAILBASE PUBSHELL"
+	;;
     diskstation*)
 	echo "FAIBASE DISKLESS DISKTOOLS SYSADMIN FSF"
         ;;
