@@ -1,0 +1,4 @@
+#!/bin/bash
+
+fcopy /etc/cron.d/softupdate
+fcopy /usr/local/bin/softupdate.sh
