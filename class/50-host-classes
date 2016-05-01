@@ -73,6 +73,9 @@ case $HOSTNAME in
     cfjail*)
 	echo "JAILBASE CFENGINE"
 	;;
+    mariajail)
+	echo "JAILBASE MARIADB"
+	;;
     libretop*)
         echo "FAIBASE $GRUB NW_MGR SYSADMIN XORG TRISQUEL WORKSTATION LAPTOP LPCONF"
         ;;
