@@ -67,6 +67,9 @@ case $HOSTNAME in
     wwwjail*)
 	echo "JAILBASE WWW"
 	;;
+    proxyjail*)
+	echo "JAILBASE WWW PROXY LETSENCRYPT"
+	;;
     cfjail*)
 	echo "JAILBASE"
 	;;
