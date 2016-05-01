@@ -73,7 +73,7 @@ case $HOSTNAME in
     cfjail*)
 	echo "JAILBASE CFENGINE"
 	;;
-    mariajail)
+    mariajail*)
 	echo "JAILBASE MARIADB"
 	;;
     libretop*)
