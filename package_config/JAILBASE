@@ -1,4 +1,6 @@
 PACKAGES aptitude
 openssh-server
 fai-client
+git
+rsyslog cron locales
 linux-image-generic- memtest86-
