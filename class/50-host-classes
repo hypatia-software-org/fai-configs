@@ -67,6 +67,9 @@ case $HOSTNAME in
     wwwjail*)
 	echo "JAILBASE WWW"
 	;;
+    cfjail*)
+	echo "JAILBASE"
+	;;
     libretop*)
         echo "FAIBASE $GRUB NW_MGR SYSADMIN XORG TRISQUEL WORKSTATION LAPTOP LPCONF"
         ;;
