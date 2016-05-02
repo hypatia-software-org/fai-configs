@@ -1,0 +1,4 @@
+CASCookiePath /var/cache/apache2/mod_auth_cas/
+CASLoginURL https://transadvice.org/cas/login
+CASValidateURL https://transadvice.org/cas/validate
+CASVersion 1
