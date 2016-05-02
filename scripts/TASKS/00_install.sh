@@ -28,4 +28,5 @@ if [[ ! -d $target/var/www/$SERVERNAME ]]; then
 EOF
     $ROOTCMD a2dissite 00-default
     $ROOTCMD a2ensite $SERVERNAME
+    $ROOTCMD a2enmod rewrite
 fi
