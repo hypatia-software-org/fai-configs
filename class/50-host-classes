@@ -24,7 +24,7 @@ case $HOSTNAME in
 	echo "JAILBASE WWW PHP5 PMWIKI"
 	;;
     tasks*)
-	echo "JAILBASE WWW PHP5 MODCAS"
+	echo "JAILBASE WWW PHP5 MODCAS TASKS"
 	;;
     martel)
 	;&
