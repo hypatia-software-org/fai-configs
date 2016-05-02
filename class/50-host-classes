@@ -20,6 +20,9 @@ case $HOSTNAME in
     ircjail*)
 	echo "JAILBASE"
 	;;
+    staff*)
+	echo "JAILBASE WWW PHP5 PMWIKI"
+	;;
     martel)
 	;&
     shelljail*)
