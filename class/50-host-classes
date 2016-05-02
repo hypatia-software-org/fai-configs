@@ -26,6 +26,9 @@ case $HOSTNAME in
     tasks*)
 	echo "JAILBASE WWW PHP5 MODCAS TASKS"
 	;;
+    talk*)
+	echo "JAILBASE ASTERISK MUMBLE"
+	;;
     martel)
 	;&
     shelljail*)

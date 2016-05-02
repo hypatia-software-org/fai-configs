@@ -1,0 +1,132 @@
+;;Notes
+;There are currently two TTS options available - Flite and Festival
+;Flite "just works" and is configured in flite.conf
+;Festival is configured in festival.conf and requires "festival --server" to be running (there is a sample startup file at /etc/asterisk/festival.scm for setting initial voice)
+;Right now, Flite is male, and Festival is female
+
+;We are using OSS, not ALSA
+
+[general]
+static=yes
+writeprotect=no     ;Allow dialplan to be saved from CLI
+clearglobalvars=yes ;Update global variables on reload
+autofallthrough=yes ;Automatically hang up when a call is out of things to do so we don't have to worry about invoking Hangup
+priorityjumping=yes ;Allow dialplan applications to jump to different priorities
+
+[globals]
+;Where is the passwd file, how long is it, and how many seconds should we wait for input?
+passwd_file => /etc/asterisk/passwd  
+passwd_digits => 4
+passwd_timeout => 8
+
+;How many bytes maximum should festival speak at once?
+festival_max_buf => 1024
+
+;Where are prepared calls for playback?
+call_directory => /tmp/asterisk/calls
+
+;Where is the number verify script for 6XXXXXXXXXX calls?
+very_path => /etc/asterisk/verify.sh
+
+[callfiles] ;Context for call files
+;Interpret any 4 digit extension as a filename under ${call_directory} to read out
+exten => _XXXX,1,Answer
+same => n,Set(message=${FILE(${call_directory}/${EXTEN},0,${festival_max_buf})})
+same => n,Flite(${message})
+
+[bridgeinctx] ;Special context used by the confbridge transfer functions
+;Hangup the caller and transfer the called party to the conference as a restricted user
+exten => 1,1,Hangup
+same => n,ConfBridge(0,bridge,called_user)
+
+;Wait for an extension from the caller and transfer the called party to the conference as a restricted user
+exten => 2,1,Goto(default,1,1)
+same => n,ConfBridge(0,bridge,called_user)
+
+;Do the same for an admin
+exten => 3,1,Hangup
+same => n,ConfBridge(0,bridge,admin)
+
+[outgoing] ;Outbound to PSTN
+;Dial the extension through our SIP proxy
+exten => _1XXXXXXXXXX,1,Dial(SIP/sipproxy/${EXTEN})
+
+[inbound-sdf] ;In from SDF
+exten => 1212,1,Goto(authentication,1,1)
+
+[authentication] ;Authentication context
+;Read the password file and compare it to an input DTMF sequence
+exten => 1,1,Flite("Please enter the access code.")
+same => n,Set(secure=${FILE(${passwd_file})})
+same => n,Read(code,,${passwd_digits},,,${passwd_timeout})
+same => n,Wait(3)
+same => n,GotoIf($["${code}" == "${secure}"]?inbound,1,1)
+
+[inbound] ;Context for inbound calls
+;Play a nice message before dropping into the default context
+exten => 1,1,Festival("Welcome, Press 5 to enter the conference, or 9, followed by a ten digit United States phone number to dial out: press 7 followed by a number to call a party into the conference",any)
+same => n,Goto(default,1,1)
+
+;If we get an invalid extension (possibly by interrupting Festival with DTMF), proceed to the default context
+exten => i,1,Goto(default,1,1)
+
+[phrases] ;TTS phrases
+;Return to default context on hangup
+exten => h,1,Goto(default,1,1)
+
+;Call maximum reached
+exten => 1,1,Flite("Call maximum reached. To bypass, use prefix 8.")
+
+[default]  ;Default (main) context
+;Set CID number
+exten => _0XXXXXXXXXX,1,Set(CALLERID(num)=${EXTEN:1}))
+same => n,Playback(beep)
+
+;Wait for an extension
+exten => 1,1,Playback(beep)
+same => n,WaitExten
+
+;Manually read out a prepared call
+exten => _2XXXX,1,Goto(callfiles,${EXTEN:1},1)
+
+;Summon a user with custom script
+exten => _3XXXX,1,System(/etc/asterisk/summon.sh ${EXTEN})
+same => n,Goto(1,1)
+
+;Join the conference as an admin user [requires PIN entry as defined in confbridge.conf]
+exten => 4,1,ConfBridge(0,bridge,admin,admin_menu)
+
+;Join the conference as a default user
+exten => 5,1,ConfBridge(0,bridge,user,user_menu)
+
+;Join the conference as a default user
+exten => 55,1,ConfBridge(0,synbridge,user,user_menu)
+
+exten => 22,1,Dial(SIP/mumsi/1${EXTEN:1},20,G(bridgeinctx^1^1))
+
+;Join the conference as a restricted [called-in] user
+exten => 6,1,ConfBridge(0,bridge,called_user)
+
+;If we haven't exceeded the call maximum for a number, dial out to the PSTN, hang up caller, and transfer called party to conference bridge on answer
+exten => _6XXXXXXXXXX,1,Set(callok=${SHELL(${verify_path} ${EXTEN:1})})
+same => n,GotoIf($["${callok}" = "0"]?n:phrases,1,1)
+same => n,Dial(SIP/sipproxy/1${EXTEN:1},20,G(bridgeinctx^1^1))
+
+;Dial out to the PSTN, wait for extension from caller, and transfer called party to conference bridge on answer 
+exten => _7XXXXXXXXXX,1,Dial(SIP/sipproxy/1${EXTEN:1},20,G(bridgeinctx^2^1))
+
+;Dial out to the PSTN, hang up caller, and transfer called party to conference bridge on answer (Call maximum override)
+exten => _8XXXXXXXXXX,1,Dial(SIP/sipproxy/1${EXTEN:1},20,G(bridgeinctx^1^1))
+
+;Dial out to the PSTN, hang up caller, and transfer called party to conference bridge on answer (Call maximum override) (Admin user group)
+exten => _5XXXXXXXXXX,1,Dial(SIP/sipproxy/1${EXTEN:1},20,G(bridgeinctx^3^1))
+
+;Dial out to the PSTN
+exten => _9XXXXXXXXXX,1,Goto(outgoing,1${EXTEN:1},1)
+
+;Try again if invalid extension
+exten => i,1,Goto(1,1)
+
+
+
+

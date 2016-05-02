@@ -1,0 +1,53 @@
+[general]
+; The general section of this config
+; is not currently used, but reserved
+; for future use.
+
+[called_user] ;User transferred in from the PSTN
+type=user
+dtmf_passthrough=no  ;Don't receive DTMF
+quiet=yes            ;No announcements
+dsp_drop_silence=yes  ;Noise reduction
+jitterbuffer=yes     ;Buffer for the PSTN
+
+[admin] ;Admin user with menu commands
+type=user
+admin=yes            ;Can use admin menu options
+dtmf_passthrough=yes ;DTMF enabled for menus
+pin=2069             ;Secure PIN to restrict access to admin user
+dsp_drop_silence=yes ;Noise reduction
+jitterbuffer=no      ;No buffer for SIP
+
+[user] ;Default confnnerence user
+type=user            
+dtmf_passthrough=yes ;DTMF enabled for menus 
+dsp_drop_silence=yes ;Noise reduction
+jitterbuffer=no      ;No buffer for SIP
+
+[synbridge]
+type=bridge
+max_members=10       ; This option limits the number of participants for a single
+language=en          ; Set the language used for announcements to the conference.
+
+
+[bridge]
+type=bridge
+max_members=10       ; This option limits the number of participants for a single
+language=en          ; Set the language used for announcements to the conference.
+
+[user_menu] ;Menu for default users
+type=menu
+*=toggle_mute                ;Toggle muting self
+1=dialplan_exec(default,1,1) ;Drop into the default context to do something
+2=leave_conference           ;Return to dialplan execution
+3=participant_count          ;Vocalize amount of users in conference bridge
+
+[admin_menu] ;Menu for admins
+type=menu 
+*=toggle_mute
+1=dialplan_exec(default,1,1) 
+2=leave_conference
+3=participant_count
+7=admin_kick_last                ;Kick last user who joined
+8=admin_toggle_conference_lock   ;Lock/unlock conference (bar new users from entering)
+9=admin_toggle_mute_participants ;Toggle muting all non admins
