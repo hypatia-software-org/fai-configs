@@ -23,6 +23,9 @@ case $HOSTNAME in
     staff*)
 	echo "JAILBASE WWW PHP5 PMWIKI"
 	;;
+    tasks*)
+	echo "JAILBASE WWW PHP5"
+	;;
     martel)
 	;&
     shelljail*)
