@@ -1,2 +1,3 @@
 PACKAGES aptitude
 libapache2-mod-auth-cas
+ca-certificates
