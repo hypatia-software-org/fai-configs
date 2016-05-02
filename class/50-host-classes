@@ -88,6 +88,9 @@ case $HOSTNAME in
     mariajail*)
 	echo "JAILBASE MARIADB"
 	;;
+    etherjail*)
+	echo "JAILBASE NODEJS ETHERPAD"
+	;;
     libretop*)
         echo "FAIBASE $GRUB NW_MGR SYSADMIN XORG TRISQUEL WORKSTATION LAPTOP LPCONF"
         ;;
