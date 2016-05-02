@@ -18,7 +18,7 @@ case $HOSTNAME in
         echo "FAIBASE $GRUB DHCPC DEMO XORG TRISQUEL RMS"
 	;;
     ranma*)
-	echo "JAILBASE"
+	echo "JAILBASE LETSENCRYPT"
 	;;
     ircjail*)
 	echo "JAILBASE"
