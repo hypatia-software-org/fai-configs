@@ -1,0 +1,3 @@
+#!/bin/bash
+
+$ROOTCMD ln -s /usr/bin/nodejs /usr/bin/node
