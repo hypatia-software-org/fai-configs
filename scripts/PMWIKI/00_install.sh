@@ -3,7 +3,7 @@
 if [[ ! -d $target/var/www/$SERVERNAME ]]; then
     $ROOTCMD rm -rf /var/www/html
     wget -O- http://www.pmwiki.org/pub/pmwiki/pmwiki-2.2.86.tgz | tar xzf - -C$target/var/www/
-    $ROOTCMD mv /var/ww/pmwiki-2.2.86 /var/www/$SERVERNAME
+    $ROOTCMD mv /var/www/pmwiki-2.2.86 /var/www/$SERVERNAME
 
     cat <<EOF >$target/etc/apache2/sites-available/$SERVERNAME.conf
 <VirtualHost _default_:80>
