@@ -8,4 +8,4 @@ if [[ ! $? -eq 0 ]]; then
     $ROOTCMD adduser --system --disabled-password --gecos "$gecos" $username
 fi
 
-$ROOTCMD chown -R $username:$username /usr/src/etherpad
+$ROOTCMD chown -R $username /usr/src/etherpad
