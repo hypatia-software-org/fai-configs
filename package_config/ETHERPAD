@@ -1,2 +1,3 @@
 PACKAGES aptitude ETHERPAD
 ca-certificates
+curl
