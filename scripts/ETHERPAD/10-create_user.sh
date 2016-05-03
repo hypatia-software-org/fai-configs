@@ -3,6 +3,7 @@
 username=etherpad
 gecos="Etherpad User"
 
-if [[ ! $ROOTCMD getent passwd $username ]]; then
+$ROOTCMD getent passwd $username
+if [[ $? -eq 0 ]]; then
     $ROOTCMD adduser --system --disabled-password --gecos "$gecos" $username
 fi
