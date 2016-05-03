@@ -1,5 +1,5 @@
 #!/bin/bash
 lepath=/srv/letsencrypt
 apachectl stop
-$lepath/./letsencrypt-auto certonly --standalone --agree-tos --email sysadmin@ftee.org -d ftee.org -d tasks.ftee.org -d staff.ftee.org -d staff0.ftee.org -d talk.ftee.org -d ranma.ftee.org -d etherpad.ftee.org
+$lepath/./letsencrypt-auto certonly --standalone --agree-tos --email sysadmin@ftee.org -d ftee.org -d tasks.ftee.org -d staff.ftee.org -d staff0.ftee.org -d talk.ftee.org -d ranma.ftee.org -d pad.ftee.org
 apachectl start
