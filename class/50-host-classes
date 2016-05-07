@@ -23,6 +23,8 @@ case $HOSTNAME in
     ircjail*)
 	echo "JAILBASE"
 	;;
+    wiki*)
+	;&
     staff*)
 	echo "JAILBASE WWW PHP5 PMWIKI"
 	;;
