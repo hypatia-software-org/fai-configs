@@ -1,8 +1,8 @@
-41;297;0c#!/bin/bash
+#!/bin/bash
 
 fcopy /etc/munin/munin.conf
 if [ ! -f $target/etc/apache2/sites-available/$SERVERNAME.conf ]; then
-echo <<EOF > $target/etc/apache2/sites-available/$SERVERNAME.conf
+cat <<EOF > $target/etc/apache2/sites-available/$SERVERNAME.conf
 <VirtualHost *:80>
         ServerAdmin sysadmin@ftee.org
         ServerName      $SERVERNAME
