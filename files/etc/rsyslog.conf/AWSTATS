@@ -59,12 +59,5 @@ $WorkDirectory /var/spool/rsyslog
 #
 $IncludeConfig /etc/rsyslog.d/*.conf
 
-# Write all httpd logs to this file (please note the comma)
-$template httpdAccess,"/var/log/httpd_access_log"
-
-# If the log's tag is "httpd" and matches
-# the defined level, send it to a specific file
-if $syslogtag == 'httpd' then {
-    local6.info ?httpdAccess
-    & ~
-}
+if $syslogfacility-text == 'local6' and $programname == 'httpd' then /var/log/httpd-access.log
+if $syslogfacility-text == 'local6' and $programname == 'httpd' then ~
