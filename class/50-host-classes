@@ -34,6 +34,9 @@ case $HOSTNAME in
     talk*)
 	echo "JAILBASE ASTERISK MUMBLE"
 	;;
+    monitor*)
+	echo "JAILBASE MUNIN WWW"
+	;;
     martel)
 	;&
     shelljail*)
