@@ -1,4 +1,4 @@
-41;297;0c#!/bin/bash
+#!/bin/bash
 
 fcopy /etc/munin/munin.conf
 if [ ! -f $target/etc/apache2/sites-available/$SERVERNAME.conf ]; then
