@@ -1,0 +1,3 @@
+# Apache specific log directives
+
+local6.info @10.0.3.111:514

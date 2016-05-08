@@ -1,0 +1,1 @@
+CustomLog "|/usr/bin/logger -t httpd -p local6.info" combined
