@@ -37,6 +37,9 @@ case $HOSTNAME in
     monitor*)
 	echo "JAILBASE MUNIN WWW"
 	;;
+    stats*)
+	echo "JAILBASE AWSTATS WWW"
+	;;
     martel)
 	;&
     shelljail*)
