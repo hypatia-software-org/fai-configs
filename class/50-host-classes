@@ -23,6 +23,9 @@ case $HOSTNAME in
     ircjail*)
 	echo "JAILBASE"
 	;;
+    chat*)
+	echo "JAILBASE KIWI"
+	;;
     wiki*)
 	;&
     staff*)
