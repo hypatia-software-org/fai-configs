@@ -102,6 +102,9 @@ case $HOSTNAME in
     libretop*)
         echo "FAIBASE $GRUB NW_MGR SYSADMIN XORG TRISQUEL WORKSTATION LAPTOP LPCONF"
         ;;
+    loomio*)
+        echo "JAILBASE WWW LOOMIO MARIADB"
+        ;;
     mwikiserver*)
 	echo "FAIBASE MEDIAWIKI SYSADMIN VM"
 	;;
