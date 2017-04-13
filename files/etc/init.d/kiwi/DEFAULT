@@ -1,0 +1,14 @@
+#!/bin/bash
+
+case ch in $1:
+    start)
+        sudo -u ircweb /srv/kiwi/KiwiIRC/kiwi start
+    ;;
+    stop)
+	sudo -u ircweb /srv/kiwi/KiwiIRC/kiwi stop
+    ;;
+    *)
+        sudo -u ircweb /srv/kiwi/KiwiIRC/kiwi start
+    ;;	
+    
+esac

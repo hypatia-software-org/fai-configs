@@ -1,0 +1,4 @@
+PACKAGES aptitude KIWI
+git
+npm
+ca-certificates

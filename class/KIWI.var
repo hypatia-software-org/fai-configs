@@ -1,0 +1,3 @@
+KIWIUSER=ircweb
+KIWIGROUP=ircweb
+KIWITARGET=/srv/kiwi/KiwiIRC
