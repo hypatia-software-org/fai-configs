@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ ! -d /etc/letsencrypt/archive/HOSTNAME_TOKEN ]; then
+if [ ! -d /etc/letsencrypt/archive/HOSTNAME_TOKEN && ! -f /etc/skip.letsencrypt ]; then
 
     # Nasty hack for getting port 443/80 if needed
     /etc/init.d/nginx stop &> /dev/null

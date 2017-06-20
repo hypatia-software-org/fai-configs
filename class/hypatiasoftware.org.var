@@ -1,0 +1,3 @@
+LETSENCRYPT_PATH=/srv/
+LETSENCRYPT_EMAIL=sysadmin@hypatiasoftware.org
+LETSENCRYPT_SKIP=1
