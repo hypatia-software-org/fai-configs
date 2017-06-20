@@ -2,7 +2,7 @@
 
 fcopy /usr/local/bin/letsencrypt.sh
 
-$ROOTCMD sed "s^LETSENCRYPT_PATH^$LETSENCRYPT_PATH^g" -i /usr/local/bin/letsencrypt.sh
+$ROOTCMD sed "s^LETSENCRYPT_PATH^$LETSENCRYPT_PATH/letsencrypt^g" -i /usr/local/bin/letsencrypt.sh
 $ROOTCMD sed "s/LETSENCRYPT_EMAIL/$LETSENCRYPT_EMAIL/g" -i /usr/local/bin/letsencrypt.sh
 
 #Copy domains
