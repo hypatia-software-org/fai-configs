@@ -8,7 +8,7 @@ $ROOTCMD sed "s/LETSENCRYPT_EMAIL/$LETSENCRYPT_EMAIL/g" -i /usr/local/bin/letsen
 #Copy domains
 dlist=''
 for domain in $LETSENCRYPT_DOMAINS; do
-    $dlist="$dlist -e $domain"
+    dlist="$dlist -e $domain"
 done
 
 $ROOTCMD sed "s/LETSENCRYPT_DOMAINS/$dlist/g" -i /usr/local/bin/letsencrypt.sh
