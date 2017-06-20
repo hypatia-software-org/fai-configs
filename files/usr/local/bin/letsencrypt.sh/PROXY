@@ -1,5 +1,5 @@
 #!/bin/bash
 lepath=LETSENCRYPT_PATH
 service apache2 stop
-$lepath/./letsencrypt-auto certonly --standalone --agree-tos --email LETSENCRYPT_EMAIL 
+$lepath/./letsencrypt-auto certonly --standalone --agree-tos --email LETSENCRYPT_EMAIL LETSENCRYPT_DOMAINS
 service apache2 start
