@@ -10,7 +10,7 @@ $ROOTCMD sed 's^LETSENCRYPT_EMAIL_TOKEN^'$LETSENCRYPT_EMAIL'^g' -i /etc/init.d/r
 $ROOTCMD sed 's^SERVERNAME_TOKEN^'$SERVERNAME'^g' -i /etc/init.d/request-letsencrypt
 $ROOTCMD sed 's^HOSTNAME_TOKEN^'$HOSTNAME'^g' -i /etc/init.d/request-letsencrypt
 
-if [ $LETSENCRYPT_SKIP = 1 ]; then
+if [[ $LETSENCRYPT_SKIP = 1 ]]; then
     $ROOTCMD touch /etc/skip.letsencrypt
 fi
 
