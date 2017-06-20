@@ -1,2 +1,3 @@
 LETSENCRYPT_PATH=/srv/
 LETSENCRYPT_EMAIL=sysadmin@ftee.org
+LETSENCRYPT_DOMAINS='ftee.org tasks.ftee.org staff.ftee.org talk.ftee.org ranma.ftee.org pad.ftee.org wiki.transadvice.org stats.ftee.org etherpad.transadvice.org monitor.ftee.org calc.ftee.org'
