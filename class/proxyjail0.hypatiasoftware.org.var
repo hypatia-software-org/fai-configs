@@ -3,3 +3,6 @@ IPADDR=10.0.3.101
 NETMASK=255.255.255.0
 NIC1=eth0
 SERVERNAME=proxyjail0.hypatiasoftware.org
+LETSENCRYPT_PATH=/srv/
+LETSENCRYPT_EMAIL=sysadmin@hypatiasoftware.org
+LETSENCRYPT_SKIP=1
