@@ -1,4 +1,4 @@
-FAI_CONFIG_SRC=nfs://10.0.3.1/srv/fai/config
+FAI_CONFIG_SRC=git+http://github.com/hypatia-software-org/fai-configs.git
 
 MNTPOINT=/srv/fai/mirror
 
