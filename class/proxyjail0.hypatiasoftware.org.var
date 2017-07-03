@@ -6,10 +6,10 @@ SERVERNAME=proxyjail0.hypatiasoftware.org
 LETSENCRYPT_PATH=/srv/
 LETSENCRYPT_EMAIL=sysadmin@hypatiasoftware.org
 LETSENCRYPT_SKIP=1
-PROXY_DOMAINS='hypatiasoftware.org:wwwjail0.hypatiasoftware.org planet.hypatiasoftware.org:planetjail0.hypatiasoftware.org'
+PROXY_DOMAINS='hypatiasoftware.org:wwwjail0.hypatiasoftware.org planet.hypatiasoftware.org:planetjail0.hypatiasoftware.org pad.hypatiasoftware.org:etherjail0.hypatiasoftware.org'
 
 PROXY_DOMAINS_HASH=/etc/apache.domains
 
 #stip mappings
-LETSENCRYPT_DOMAINS=`echo $PROXY_DOMAINS | sed 's/:[a-z0-9\.]*//g'`
+LETSENCRYPT_DOMAINS=`echo $PROXY_DOMAINS | sed 's/:[a-z0-9\.,]*//g'`
 
