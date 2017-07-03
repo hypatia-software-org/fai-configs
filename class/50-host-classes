@@ -46,6 +46,8 @@ case $HOSTNAME in
     stats*)
 	echo "JAILBASE AWSTATS WWW"
 	;;
+    shelly)
+	;&
     martel)
 	;&
     shelljail*)
