@@ -23,6 +23,9 @@ case $HOSTNAME in
     ircjail*)
 	echo "JAILBASE"
 	;;
+    hypatia*)
+	echo "FAIBASE LXCHOST"
+	;;
     chat*)
 	echo "JAILBASE KIWI"
 	;;
@@ -45,6 +48,9 @@ case $HOSTNAME in
 	;;
     stats*)
 	echo "JAILBASE AWSTATS WWW"
+	;;
+    planetjail*)
+	echo "JAILBASE WWW"
 	;;
     shelly*)
 	;&
