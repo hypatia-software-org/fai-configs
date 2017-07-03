@@ -15,7 +15,7 @@ if [[ $? -ne 0 ]]; then
     for domainpair in $PROXY_DOMAINS; do
 	public=`echo $domainpair | cut -d: -f1`
 	private=`echo $domainpair | cut -d: -f2`
-	echo > /etc/apache2/sites-available/$public.conf <<EOF
+	cat > /etc/apache2/sites-available/$public.conf <<EOF
 <VirtualHost *:80>
     ServerName $public
     Redirect "/" "https://$public/"
