@@ -34,6 +34,9 @@ case $HOSTNAME in
     staff*)
 	echo "JAILBASE WWW PHP5 PMWIKI"
 	;;
+    docujail*)
+	echo "JAILBASE WWW DOCUWIKI"
+	;;
     ftee*)
 	echo "JAILBASE WWW PHP5"
 	;;
