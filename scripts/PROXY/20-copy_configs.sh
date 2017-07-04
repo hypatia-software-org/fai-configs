@@ -27,6 +27,7 @@ if [[ $? -ne 0 ]]; then
     ProxyPass / http://$private/
     ProxyPassReverse / http://$private/
     SSLEngine On
+    Include /etc/apache2/ssl.conf
 #    Include /etc/apache2/include/log.conf
 #    CustomLog "|/usr/bin/logger -t httpd-chat.$public -p local6.info" combined
 </VirtualHost>
