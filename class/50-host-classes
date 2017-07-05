@@ -5,8 +5,9 @@
 if (ifclass I386 || ifclass AMD64) ; then
     GRUB="GRUB_PC"
 fi
-
-# use a list of classes for our demo machine                                                                                                   
+###################################
+# START HOSTNAME TO CLASS MAPPING #
+###################################
 case $HOSTNAME in
     faiserver*)
 	echo "FAIBASE FAISERVER SYSADMIN VM"
