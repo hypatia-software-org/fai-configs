@@ -1,0 +1,10 @@
+lxcgroup=ldg
+fai=/usr/sbin/fai
+ugid_offset=65536
+bridge=lxcbr0
+net_type=veth
+local_subd=.local/share/lxc
+config_subd=.config/lxc
+lxcusernet=/etc/lxc/lxc-usernet
+lxcgid=1300
+lxcscripts=/var/lib/lxc/scripts
