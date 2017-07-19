@@ -111,6 +111,9 @@ case $HOSTNAME in
     cfjail*)
 	echo "JAILBASE CFENGINE"
 	;;
+    mailjail*)
+        echo "JAILBASE EXIM"
+    ;;
     mariajail*)
 	echo "JAILBASE MARIADB"
 	;;
