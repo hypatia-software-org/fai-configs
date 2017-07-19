@@ -1,3 +1,5 @@
 PACKAGES aptitude
 
 exim4-base
+exim4-config
+exim4-daemon-heavy
