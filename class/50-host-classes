@@ -24,6 +24,9 @@ case $HOSTNAME in
     ircjail*)
 	echo "JAILBASE"
 	;;
+    ssojail*)
+	echo "JAILBASE SSO"
+	;;
     hypatia*)
 	echo "FAIBASE LXCHOST"
 	;;
