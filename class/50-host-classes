@@ -123,6 +123,9 @@ case $HOSTNAME in
     libretop*)
         echo "FAIBASE $GRUB NW_MGR SYSADMIN XORG TRISQUEL WORKSTATION LAPTOP LPCONF"
         ;;
+    psqljail*)
+	echo "JAILBASE PSQL"
+	;;
     loomiojail*)
         echo "JAILBASE WWW LOOMIO"
         ;;
