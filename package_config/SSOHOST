@@ -1,0 +1,4 @@
+PACKAGES aptitude SSOHOST
+openjdk-8-jre-headless libpostgresql-jdbc-java
+slapd nginx
+ca-certificates
