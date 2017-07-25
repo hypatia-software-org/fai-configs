@@ -35,6 +35,9 @@ case $HOSTNAME in
 	;;
     wiki*)
 	;&
+    civijail*)
+	echo "JAILBASE WWW PHP5"
+	;;
     staff*)
 	echo "JAILBASE WWW PHP5 PMWIKI"
 	;;
