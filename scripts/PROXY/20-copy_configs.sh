@@ -15,6 +15,10 @@ if [[ $? -ne 0 ]]; then
     for domainpair in $PROXY_DOMAINS; do
 	public=`echo $domainpair | cut -d: -f1`
 	private=`echo $domainpair | cut -d: -f2`
+	port=`echo $domainpair | cut -d: -f3`
+	if [ "" = "$port" ]; then
+	   port=80
+	fi
 	cat > /etc/apache2/sites-available/$public.conf <<EOF
 <VirtualHost *:80>
     ServerName $public
@@ -24,8 +28,8 @@ if [[ $? -ne 0 ]]; then
 <VirtualHost *:443>
     ServerName $public
     ProxyPreserveHost On
-    ProxyPass / http://$private/
-    ProxyPassReverse / http://$private/
+    ProxyPass / http://$private:$port/
+    ProxyPassReverse / http://$private:$port/
     SSLEngine On
     Include /etc/apache2/ssl.conf
 #    Include /etc/apache2/include/log.conf
