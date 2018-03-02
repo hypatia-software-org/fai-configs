@@ -9,6 +9,9 @@ fi
 # START HOSTNAME TO CLASS MAPPING #
 ###################################
 case $HOSTNAME in
+    mariajail*)
+	echo "JAILBASE"
+        ;;
     faiserver*)
 	echo "FAIBASE FAISERVER SYSADMIN VM"
         ;;
