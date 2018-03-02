@@ -10,7 +10,7 @@ fi
 ###################################
 case $HOSTNAME in
     mariajail*)
-	echo "JAILBASE"
+	echo "JAILBASE MARIADB"
         ;;
     faiserver*)
 	echo "FAIBASE FAISERVER SYSADMIN VM"
