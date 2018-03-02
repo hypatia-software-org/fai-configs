@@ -15,9 +15,6 @@ case $HOSTNAME in
     nekohost)
         echo "FAIBASE $GRUB DHCPC DEMO"
         ;;
-    rms)
-        echo "FAIBASE $GRUB DHCPC DEMO XORG TRISQUEL RMS"
-	;;
     ranma*)
 	echo "JAILBASE LETSENCRYPT"
 	;;
