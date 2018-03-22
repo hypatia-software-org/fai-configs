@@ -123,9 +123,6 @@ case $HOSTNAME in
     mailjail*)
         echo "JAILBASE EXIM"
     ;;
-    mariajail*)
-	echo "JAILBASE MARIADB"
-	;;
     etherjail*)
 	echo "JAILBASE NODEJS ETHERPAD"
 	;;
