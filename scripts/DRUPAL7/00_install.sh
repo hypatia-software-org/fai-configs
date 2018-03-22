@@ -33,3 +33,4 @@ $ROOTCMD a2dissite 000-default
 $ROOTCMD a2ensite 000-drupal
 $ROOTCMD rm -rf /etc/apache2/sites-enabled/000-default.conf
 $ROOTCMD a2enmod rewrite
+$ROOTCMD service apache2 restart
