@@ -20,3 +20,16 @@ if [ ! -d $target$base/sites/default/files ]; then
 fi
 $ROOTCMD rm -rf $base/drupal-$ver
 $ROOTCMD rm -rf $base/html
+$ROOTCMD cat <<EOM > /etc/apache2/sites-enabled/000-drupal.conf
+<VirtualHost *:80>
+	#ServerName www.example.com
+	DocumentRoot $base
+	<Directory $base>
+		AllowOverride all
+	</Directory>
+</VirtualHost>
+EOM
+$ROOTCMD a2dissite 000-default
+$ROOTCMD a2ensite 000-drupal
+$ROOTCMD rm -rf /etc/apache2/sites-enabled/000-default.conf
+$ROOTCMD a2enmod rewrite
