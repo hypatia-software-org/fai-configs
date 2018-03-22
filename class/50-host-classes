@@ -9,6 +9,9 @@ fi
 # START HOSTNAME TO CLASS MAPPING #
 ###################################
 case $HOSTNAME in
+    mariajail*)
+	echo "JAILBASE MARIADB"
+        ;;
     faiserver*)
 	echo "FAIBASE FAISERVER SYSADMIN VM"
         ;;
@@ -120,9 +123,6 @@ case $HOSTNAME in
     mailjail*)
         echo "JAILBASE EXIM"
     ;;
-    mariajail*)
-	echo "JAILBASE MARIADB"
-	;;
     etherjail*)
 	echo "JAILBASE NODEJS ETHERPAD"
 	;;
