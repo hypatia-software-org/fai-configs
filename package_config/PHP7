@@ -1,0 +1,4 @@
+PACKAGES aptitude
+php7.0
+php7.0-mysql
+php7.0-pgsql
