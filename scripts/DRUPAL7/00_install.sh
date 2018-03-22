@@ -9,7 +9,7 @@ $ROOTCMD mkdir -p $base
 $ROOTCMD tar xzf /tmp/drupal-$ver.tar.gz -C$base/
 $ROOTCMD rm -f /tmp/drupal-$ver.tar.gz
 $ROOTCMD ls -l $base
-$ROOTCMD mv $base/drupal-$ver/* $base/drupal-$ver/.htaccess $base/drupal-$ver/.gitignore $base
+$ROOTCMD sh -c "mv $base/drupal-$ver/* $base/drupal-$ver/.htaccess $base/drupal-$ver/.gitignore $base"
 if [ ! -f $base/sites/default/settings.php ]; then
 	$ROOTCMD cp $base/sites/default/default.settings.php $base/sites/default/settings.php
 	$ROOTCMD chown $user $base/sites/default/settings.php
