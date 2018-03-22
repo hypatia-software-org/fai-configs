@@ -3,7 +3,8 @@
 base=/var/www
 ver=7.57
 user=www-data
-instance_url=https://my.hypatiasoftware.org
+hostname=my.hypatiasoftware.org
+instance_url=https://$hostname
 
 $ROOTCMD curl -L https://ftp.drupal.org/files/projects/drupal-$ver.tar.gz -o /tmp/drupal-$ver.tar.gz
 $ROOTCMD mkdir -p $base
@@ -33,7 +34,7 @@ $ROOTCMD rm -rf $base/html
 # Install the Apache configuration
 $ROOTCMD cat <<EOM > /etc/apache2/sites-enabled/000-drupal.conf
 <VirtualHost *:80>
-	#ServerName www.example.com
+	ServerName $hostname
 	DocumentRoot $base
 	<Directory $base>
 		AllowOverride all
