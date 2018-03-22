@@ -18,9 +18,6 @@ case $HOSTNAME in
     nekohost)
         echo "FAIBASE $GRUB DHCPC DEMO"
         ;;
-    rms)
-        echo "FAIBASE $GRUB DHCPC DEMO XORG TRISQUEL RMS"
-	;;
     ranma*)
 	echo "JAILBASE LETSENCRYPT"
 	;;
@@ -72,27 +69,6 @@ case $HOSTNAME in
     shelljail*)
 	echo "JAILBASE PUBSHELL"
 	;;
-    diskstation*)
-	echo "FAIBASE DISKLESS DISKTOOLS SYSADMIN FSF"
-        ;;
-    freestation7)
-        echo "FAIBASE DISKLESS XORG TRISQUEL WORKSTATION FSF SYSADMIN MV"
-        ;;
-    freestation06)
-        echo "FAIBASE DISKLESS XORG TRISQUEL WORKSTATION FSF SYSADMIN JAPANESE"
-        ;;
-    freestation*)
-        echo "FAIBASE DISKLESS XORG TRISQUEL WORKSTATION FSF"
-        ;;
-    zoneminder*)
-	echo "FAIBASE SYSADMIN FSF ZONEMINDER MYSQLD"
-        ;;
-    freetop-x60*)
-	echo "FAIBASE $GRUB NW_MGR XORG TRISQUEL WORKSTATION FSF"
-	;;
-    contop*)
-	echo "FAIBASE $GRUB NW_MGR XORG TRISQUEL WORKSTATION FSF CONTOP"
-	;;
     iwikiserver*)
 	echo "FAIBASE IKIWIKI SYSADMIN VM"
 	;;
@@ -101,15 +77,6 @@ case $HOSTNAME in
         ;;
     mysqlserver*)
         echo "FAIBASE KVMGUEST SYSADMIN MYSQLD"
-        ;;
-    streamstation*)
-        echo "FAIBASE $GRUB SYSADMIN STREAM XORG TRISQUEL LPCONF"
-	;;
-    streamtop*)
-        echo "FAIBASE $GRUB SYSADMIN STREAM XORG TRISQUEL LAPTOP LPCONF"
-        ;;
-    freetop*)
-        echo "FAIBASE $GRUB NW_MGR SYSADMIN XORG TRISQUEL WORKSTATION LAPTOP 3DPRINT"
         ;;
     wwwjail*)
 	echo "JAILBASE WWW"
@@ -126,9 +93,6 @@ case $HOSTNAME in
     etherjail*)
 	echo "JAILBASE NODEJS ETHERPAD"
 	;;
-    libretop*)
-        echo "FAIBASE $GRUB NW_MGR SYSADMIN XORG TRISQUEL WORKSTATION LAPTOP LPCONF"
-        ;;
     psqljail*)
 	echo "JAILBASE PSQL"
 	;;
