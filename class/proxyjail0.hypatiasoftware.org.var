@@ -13,7 +13,8 @@ PROXY_DOMAINS=\
 'wiki.hypatiasoftware.org:docujail0.hypatiasoftware.org '\
 'sso.hypatiasoftware.org:ssojail0.hypatiasoftware.org '\
 'my.hypatiasoftware.org:civijail0.hypatiasoftware.org '\
-'wiki.hypatiasoftware.org:wikijail0.hypatiasoftware.org'
+'wiki.hypatiasoftware.org:wikijail0.hypatiasoftware.org '\
+'wp.hypatiasoftware.org:wpjail0.hypatiasoftware.org'
 
 PROXY_DOMAINS_HASH=/etc/apache.domains
 
