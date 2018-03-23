@@ -1,3 +1,4 @@
+
 #! /bin/bash                                                                                                                                   
 . /usr/lib/fai/subroutines
 # assign classes hosts                                                                                                                         
@@ -10,70 +11,73 @@ fi
 ###################################
 case $HOSTNAME in
     mariajail*)
-	echo "JAILBASE MARIADB"
+	      echo "JAILBASE MARIADB"
         ;;
     faiserver*)
-	echo "FAIBASE FAISERVER SYSADMIN VM"
+	      echo "FAIBASE FAISERVER SYSADMIN VM"
         ;;
     nekohost)
         echo "FAIBASE $GRUB DHCPC DEMO"
         ;;
     ranma*)
-	echo "JAILBASE LETSENCRYPT"
-	;;
+	      echo "JAILBASE LETSENCRYPT"
+	      ;;
     ircjail*)
-	echo "JAILBASE"
-	;;
+	      echo "JAILBASE"
+	      ;;
     ssojail*)
-	echo "JAILBASE SSO"
-	;;
+	      echo "JAILBASE SSO"
+	      ;;
     hypatia*)
-	echo "FAIBASE LXCHOST"
-	;;
+	      echo "FAIBASE LXCHOST"
+	      ;;
     chat*)
-	echo "JAILBASE KIWI"
-	;;
+	      echo "JAILBASE KIWI"
+	      ;;
     wiki*)
-	;&
+	      ;&
     civijail*)
-	echo "JAILBASE WWW PHP7 DRUPAL7"
-	;;
+	      echo "JAILBASE WWW PHP7 DRUPAL7"
+	      ;;
+    civijail*)
+	      echo "JAILBASE WWW PHP7 DRUPAL7"
+	      ;;
     wpjail*)
-	echo "JAILBASE WWW PHP7 WORDPRESS"
-	;;
+	      echo "JAILBASE WWW PHP7 WORDPRESS"
+	      ;;
     staff*)
-	echo "JAILBASE WWW PHP5 PMWIKI"
-	;;
+	      echo "JAILBASE WWW PHP5 PMWIKI"
+	      ;;
     docujail*)
-	echo "JAILBASE WWW DOCUWIKI"
-	;;
+	      echo "JAILBASE WWW DOCUWIKI"
+	      ;;
     ftee*)
-	echo "JAILBASE WWW PHP5"
-	;;
+	      echo "JAILBASE WWW PHP5"
+	      ;;
     tasks*)
-	echo "JAILBASE WWW PHP5 MODCAS TASKS"
-	;;
+	      echo "JAILBASE WWW PHP5 MODCAS TASKS"
+	      ;;
     talk*)
-	echo "JAILBASE ASTERISK MUMBLE"
-	;;
+	      echo "JAILBASE ASTERISK MUMBLE"
+	      ;;
     monitor*)
-	echo "JAILBASE MUNIN WWW"
-	;;
+	      echo "JAILBASE MUNIN WWW"
+	      ;;
     stats*)
-	echo "JAILBASE AWSTATS WWW"
-	;;
+	      echo "JAILBASE AWSTATS WWW"
+	      ;;
     planetjail*)
-	echo "JAILBASE WWW"
-	;;
+	      echo "JAILBASE WWW"
+	      ;;
     shelly*)
-	;&
+	      ;&
     martel)
-	;&
+	      ;&
     shelljail*)
-	echo "JAILBASE PUBSHELL"
-	;;
+	      echo "JAILBASE PUBSHELL"
+	      ;;
     diskstation*)
-	echo "FAIBASE DISKLESS DISKTOOLS SYSADMIN"
+	      echo "FAIBASE DISKLESS DISKTOOLS SYSADMIN"
         ;;
     freestation7)
         echo "FAIBASE DISKLESS XORG WORKSTATION SYSADMIN MV"
@@ -85,17 +89,17 @@ case $HOSTNAME in
         echo "FAIBASE DISKLESS XORG WORKSTATION"
         ;;
     zoneminder*)
-	echo "FAIBASE SYSADMIN ZONEMINDER MYSQLD"
+	      echo "FAIBASE SYSADMIN ZONEMINDER MYSQLD"
         ;;
     freetop-x60*)
-	echo "FAIBASE $GRUB NW_MGR XORG WORKSTATION"
-	;;
+	      echo "FAIBASE $GRUB NW_MGR XORG WORKSTATION"
+	      ;;
     contop*)
-	echo "FAIBASE $GRUB NW_MGR XORG WORKSTATION CONTOP"
-	;;
+	      echo "FAIBASE $GRUB NW_MGR XORG WORKSTATION CONTOP"
+	      ;;
     iwikiserver*)
-	echo "FAIBASE IKIWIKI SYSADMIN VM"
-	;;
+	      echo "FAIBASE IKIWIKI SYSADMIN VM"
+	      ;;
     jobserver*)
         echo "FAIBASE JOB SYSADMIN VM"
         ;;
@@ -104,7 +108,7 @@ case $HOSTNAME in
         ;;
     streamstation*)
         echo "FAIBASE $GRUB SYSADMIN STREAM XORG LPCONF"
-	;;
+	      ;;
     streamtop*)
         echo "FAIBASE $GRUB SYSADMIN STREAM XORG LAPTOP LPCONF"
         ;;
@@ -112,74 +116,74 @@ case $HOSTNAME in
         echo "FAIBASE $GRUB NW_MGR SYSADMIN XORG WORKSTATION LAPTOP 3DPRINT"
         ;;
     wwwjail*)
-	echo "JAILBASE WWW"
-	;;
+	      echo "JAILBASE WWW"
+	      ;;
     proxyjail*)
-	echo "JAILBASE WWW PROXY LETSENCRYPT MODCAS"
-	;;
+	      echo "JAILBASE WWW PROXY LETSENCRYPT MODCAS"
+	      ;;
     cfjail*)
-	echo "JAILBASE CFENGINE"
-	;;
+	      echo "JAILBASE CFENGINE"
+	      ;;
     mailjail*)
         echo "JAILBASE EXIM"
-    ;;
+        ;;
     etherjail*)
-	echo "JAILBASE NODEJS ETHERPAD"
-	;;
+	      echo "JAILBASE NODEJS ETHERPAD"
+	      ;;
     libretop*)
         echo "FAIBASE $GRUB NW_MGR SYSADMIN XORG WORKSTATION LAPTOP LPCONF"
         ;;
     psqljail*)
-	echo "JAILBASE PSQL"
-	;;
+	      echo "JAILBASE PSQL"
+	      ;;
     loomiojail*)
         echo "JAILBASE WWW LOOMIO"
         ;;
     mwikiserver*)
-	echo "FAIBASE MEDIAWIKI SYSADMIN VM"
-	;;
+	      echo "FAIBASE MEDIAWIKI SYSADMIN VM"
+	      ;;
     ploneserver*)
-	echo "FAIBASE PLONE SYSADMIN VM"
-	;;
+	      echo "FAIBASE PLONE SYSADMIN VM"
+	      ;;
     printserver*)
-	echo "FAIBASE CUPS SYSADMIN VM"
-	;;
+	      echo "FAIBASE CUPS SYSADMIN VM"
+	      ;;
     crmserver*)
-	echo "FAIBASE WWW CIVICRM SYSADMIN VM"
-	;;
+	      echo "FAIBASE WWW CIVICRM SYSADMIN VM"
+	      ;;
     crmdevserver*)
-	echo "FAIBASE WWW CIVICRM SYSADMIN VM MYSQLD"
-	;;
+	      echo "FAIBASE WWW CIVICRM SYSADMIN VM MYSQLD"
+	      ;;
     gnusocial*)
-	echo "FAIBASE WWW SYSADMIN VM MYSQLD GNUSOCIAL YOURLS"
-	;;
+	      echo "FAIBASE WWW SYSADMIN VM MYSQLD GNUSOCIAL YOURLS"
+	      ;;
     nagios*)
-	echo "FAIBASE SYSADMIN VM MYSQLD NAGIOS WWW"
-	;;
+	      echo "FAIBASE SYSADMIN VM MYSQLD NAGIOS WWW"
+	      ;;
     shopserver*)
-	echo "FAIBASE SYSADMIN KOSA MARIADB WWW LETSENCRYPT"
-	;;
+	      echo "FAIBASE SYSADMIN KOSA MARIADB WWW LETSENCRYPT"
+	      ;;
     kdev*)
-	echo "FAIBASE SYSADMIN KOSA VM MYSQLD PLONE WWW"
-	;;
+	      echo "FAIBASE SYSADMIN KOSA VM MYSQLD PLONE WWW"
+	      ;;
     dcimserver*)
-	echo "FAIBASE SYSADMIN VM WWW MYSQLD ODCIM"
-	;;
+	      echo "FAIBASE SYSADMIN VM WWW MYSQLD ODCIM"
+	      ;;
     irc*)
-	echo "FAIBASE SYSADMIN KOSA SYSADMIN VM WWW LETSENCRYPT IRC"
-	;;
+	      echo "FAIBASE SYSADMIN KOSA SYSADMIN VM WWW LETSENCRYPT IRC"
+	      ;;
     glamp*)
-	echo "FAIBASE MYSQLD PHP5 SYSADMIN WWW"
-	;;
+	      echo "FAIBASE MYSQLD PHP5 SYSADMIN WWW"
+	      ;;
     gmg*libreplanet.org)
-	echo "FAIBASE VM PSQL GMG SYSADMIN LETSENCRYPT LIBREPLANET"
-	;;
+	      echo "FAIBASE VM PSQL GMG SYSADMIN LETSENCRYPT LIBREPLANET"
+	      ;;
     gmg*)
-	echo "FAIBASE VM PSQL GMG SYSADMIN LETSENCRYPT"
-	;;
-    *)  
+	      echo "FAIBASE VM PSQL GMG SYSADMIN LETSENCRYPT"
+	      ;;
+    *)
         echo "FAIBASE"
-	;;
+	      ;;
 esac
 
 exit 0
