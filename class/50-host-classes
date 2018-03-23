@@ -22,6 +22,9 @@ case $HOSTNAME in
     ranma*)
 	      echo "JAILBASE LETSENCRYPT"
 	      ;;
+    learnjail*)
+        echo "JAILBASE HYPATIA_LEARN"
+        ;;
     ircjail*)
 	      echo "JAILBASE"
 	      ;;
