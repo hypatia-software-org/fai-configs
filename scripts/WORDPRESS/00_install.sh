@@ -13,6 +13,7 @@ $ROOTCMD sh -c "mv $base/wordpress/* $base"
 $ROOTCMD rm -rf $base/drupal-$ver
 $ROOTCMD rm -rf $base/html
 # Install the Apache configuration
+$ROOTCMD ls -l /etc/apache2
 $ROOTCMD cat <<EOM > /etc/apache2/sites-enabled/000-wordpress.conf
 <VirtualHost *:80>
 	ServerName $hostname
