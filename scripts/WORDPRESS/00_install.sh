@@ -14,7 +14,7 @@ $ROOTCMD rm -rf $base/wordpress
 $ROOTCMD rm -rf $base/html
 # Install the Apache configuration
 $ROOTCMD ls -l /etc/apache2
-$ROOTCMD sh -c "cat <<EOM > /etc/apache2/sites-enabled/000-wordpress.conf
+$ROOTCMD sh -c "cat <<EOM > /etc/apache2/sites-available/000-wordpress.conf
 <VirtualHost *:80>
 	ServerName $hostname
 	DocumentRoot $base

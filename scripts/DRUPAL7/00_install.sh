@@ -32,7 +32,7 @@ fi
 $ROOTCMD rm -rf $base/drupal-$ver
 $ROOTCMD rm -rf $base/html
 # Install the Apache configuration
-$ROOTCMD cat <<EOM > /etc/apache2/sites-enabled/000-drupal.conf
+$ROOTCMD cat <<EOM > /etc/apache2/sites-available/000-drupal.conf
 <VirtualHost *:80>
 	ServerName $hostname
 	DocumentRoot $base
