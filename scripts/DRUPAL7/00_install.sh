@@ -6,10 +6,8 @@ user=www-data
 hostname=my.hypatiasoftware.org
 instance_url=https://$hostname
 
-$ROOTCMD curl -L https://ftp.drupal.org/files/projects/drupal-$ver.tar.gz -o /tmp/drupal-$ver.tar.gz
 $ROOTCMD mkdir -p $base
-$ROOTCMD tar xzf /tmp/drupal-$ver.tar.gz -C$base/
-$ROOTCMD rm -f /tmp/drupal-$ver.tar.gz
+curl -L https://ftp.drupal.org/files/projects/drupal-$ver.tar.gz | zcat - | $ROOTCMD tar xf - -C$base/
 $ROOTCMD ls -l $base
 $ROOTCMD sh -c "mv $base/drupal-$ver/* $base/drupal-$ver/.htaccess $base/drupal-$ver/.gitignore $base"
 if [ ! -f $target$base/sites/default/settings.php ]; then
