@@ -38,6 +38,9 @@ case $HOSTNAME in
     civijail*)
 	echo "JAILBASE WWW PHP7 DRUPAL7"
 	;;
+    wpjail*)
+	echo "JAILBASE WWW PHP7 WORDPRESS"
+	;;
     staff*)
 	echo "JAILBASE WWW PHP5 PMWIKI"
 	;;
