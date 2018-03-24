@@ -25,5 +25,5 @@ $ROOTCMD sh -c "cat <<EOM > /etc/apache2/sites-available/000-wordpress.conf
 EOM"
 $ROOTCMD a2dissite 000-default
 $ROOTCMD a2ensite 000-wordpress
-$ROOTCMD rm -f /etc/apache2/sites-enabled/000-default.conf
+$ROOTCMD a2enmod rewrite
 $ROOTCMD service apache2 restart
