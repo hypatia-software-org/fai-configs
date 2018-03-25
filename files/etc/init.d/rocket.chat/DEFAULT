@@ -4,6 +4,16 @@ export ROOT_URL=https://chat.hypatiasoftware.org/
 export MONGO_URL=mongodb://localhost:27017/rocketchat
 export PORT=80
 
+if ! [ -f /usr/bin/nodejs ]; then
+	curl -L https://deb.nodesource.com/setup_8.x | bash -
+	apt-get install -y nodejs
+fi
+
+if ! [ -d /Rocket.Chat ]; then
+	curl -L https://releases.rocket.chat/latest/download | zcat - | tar xf -
+	mv bundle Rocket.Chat
+fi
+
 if ! [ -d /Rocket.Chat/programs/server/node_modules ]; then
 	cd /Rocket.Chat/programs/server && npm install
 fi
