@@ -7,5 +7,5 @@ $ROOTCMD apt-get install -y nodejs
 curl -L https://releases.rocket.chat/latest/download | zcat - | $ROOTCMD tar xf -
 chown -R $uid:$uid $target/bundle
 $ROOTCMD mv bundle Rocket.Chat
-$ROOTCMD sh -c "cd /Rocket.Chat && npm install"
+$ROOTCMD sh -c "cd /Rocket.Chat/programs/server && npm install"
 chown -R $uid:$uid $target/root/.npm
