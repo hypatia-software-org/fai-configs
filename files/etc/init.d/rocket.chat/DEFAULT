@@ -4,7 +4,9 @@ export ROOT_URL=https://chat.hypatiasoftware.org/
 export MONGO_URL=mongodb://localhost:27017/rocketchat
 export PORT=80
 
-if ! [ -f /usr/bin/nodejs ]; then
+/etc/init.d/networking start
+
+if ! [ -f /usr/bin/nodejs ] || ! [ -f /usr/bin/npm ]; then
 	curl -L https://deb.nodesource.com/setup_8.x | bash -
 	apt-get install -y nodejs
 fi
