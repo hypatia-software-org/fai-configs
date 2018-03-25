@@ -13,6 +13,9 @@ case $HOSTNAME in
     mariajail*)
 	      echo "JAILBASE MARIADB"
         ;;
+    rocketjail*)
+	      echo "JAILBASE ROCKET_CHAT"
+        ;;
     faiserver*)
 	      echo "FAIBASE FAISERVER SYSADMIN VM"
         ;;
