@@ -1,5 +1,4 @@
 PACKAGES aptitude
+build-essential
 curl
 graphicsmagick
-npm
-build-essential
