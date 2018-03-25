@@ -13,9 +13,6 @@ case $HOSTNAME in
     mariajail*)
 	      echo "JAILBASE MARIADB"
         ;;
-    mongojail*)
-	      echo "JAILBASE MONGODB"
-        ;;
     rocketjail*)
 	      echo "JAILBASE ROCKET_CHAT"
         ;;

@@ -1,5 +1,0 @@
-GATEWAYS=10.0.3.1
-IPADDR=10.0.3.118
-NETMASK=255.255.255.0
-NIC1=eth0
-SERVERNAME=mongojail0.hypatiasoftware.org
