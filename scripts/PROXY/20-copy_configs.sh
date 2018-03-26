@@ -40,9 +40,9 @@ EOF
 	   cat >> /etc/apache2/sites-available/$public.conf <<EOF
     RewriteEngine On
     RewriteCond %{HTTP:Upgrade} =websocket [NC]
-    RewriteRule /(.*)           ws://$private/$1 [P,L]
+    RewriteRule /(.*)           ws://$public/$1 [P,L]
     RewriteCond %{HTTP:Upgrade} !=websocket [NC]
-    RewriteRule /(.*)           http://$private/$1 [P,L]
+    RewriteRule /(.*)           http://$public/$1 [P,L]
 EOF
 	fi
 	cat >> /etc/apache2/sites-available/$public.conf <<EOF
