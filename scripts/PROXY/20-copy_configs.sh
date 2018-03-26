@@ -43,7 +43,7 @@ EOF
     RewriteCond %{HTTP:Upgrade} =websocket [NC]
     RewriteRule /(.*)           ws://$private:$port/$1 [P,L]
     RewriteCond %{HTTP:Upgrade} !=websocket [NC]
-    RewriteRule /(.*)           http://$pivate:$port/$1 [P,L]
+    RewriteRule /(.*)           http://$private:$port/$1 [P,L]
     ProxyPassReverse / http://$private:$port/
 </VirtualHost>
 EOF
