@@ -45,8 +45,6 @@ EOF
     RewriteEngine On
     RewriteCond %{HTTP:Upgrade} =websocket [NC]
     RewriteRule /(.*)           ws://$private:$port/$1 [P,L]
-    RewriteCond %{HTTP:Upgrade} !=websocket [NC]
-    RewriteRule /(.*)           http://$private:$port/$1 [P,L]
 EOF
 	fi
 	cat >> /etc/apache2/sites-available/$public.conf <<EOF
