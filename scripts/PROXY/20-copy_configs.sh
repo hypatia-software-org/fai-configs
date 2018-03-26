@@ -45,6 +45,7 @@ EOF
     RewriteCond %{HTTP:Upgrade} !=websocket [NC]
     RewriteRule /(.*)           http://$pivate:$port/$1 [P,L]
     ProxyPassReverse / http://$private:$port/
+</VirtualHost>
 EOF
 	else
 	    cat >> /etc/apache2/sites-available/$public.conf <<EOF
