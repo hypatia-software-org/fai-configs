@@ -34,8 +34,19 @@ if [[ $? -ne 0 ]]; then
     Include /etc/apache2/ssl.conf
 #    Include /etc/apache2/include/log.conf
 #    CustomLog "|/usr/bin/logger -t httpd-chat.$public -p local6.info" combined
-</VirtualHost>
 
+EOF
+	if [ $public = "chat.hypatiasoftware.org" ]; then
+	   cat > /etc/apache2/sites-available/$public.conf <<EOF
+    RewriteEngine On
+    RewriteCond %{HTTP:Upgrade} =websocket [NC]
+    RewriteRule /(.*)           ws://localhost:3000/$1 [P,L]
+    RewriteCond %{HTTP:Upgrade} !=websocket [NC]
+    RewriteRule /(.*)           http://localhost:3000/$1 [P,L]
+EOF
+	fi
+	cat > /etc/apache2/sites-available/$public.conf <<EOF
+</VirtualHost>
 EOF
 	a2ensite $public
     done
