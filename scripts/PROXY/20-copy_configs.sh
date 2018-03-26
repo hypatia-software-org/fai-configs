@@ -38,6 +38,10 @@ if [[ $? -ne 0 ]]; then
 EOF
 	if [ $public = "chat.hypatiasoftware.org" ]; then
 	   cat >> /etc/apache2/sites-available/$public.conf <<EOF
+    <Location />
+        Order allow,deny
+        Allow from all
+    </Location>
     RewriteEngine On
     RewriteCond %{HTTP:Upgrade} =websocket [NC]
     RewriteRule /(.*)           ws://$private:$port/$1 [P,L]
