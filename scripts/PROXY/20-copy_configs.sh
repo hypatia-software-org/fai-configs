@@ -44,7 +44,7 @@ EOF
     RewriteCond %{HTTP:CONNECTION} ^Upgrade$ [NC]
     RewriteRule .* ws://$pivate:$port%{REQUEST_URI} [P]
 	fi
-	cat >> /etc/apache2/sites-available/$public.conf <<EOF
+	cat > /etc/apache2/sites-available/$public.conf <<EOF
     ProxyPreserveHost On
     ProxyPass / http://$private:$port/
     ProxyPassReverse / http://$private:$port/
