@@ -37,7 +37,7 @@ if [[ $? -ne 0 ]]; then
 
 EOF
 	if [ $public = "chat.hypatiasoftware.org" ]; then
-	   cat > /etc/apache2/sites-available/$public.conf <<EOF
+	   cat >> /etc/apache2/sites-available/$public.conf <<EOF
     RewriteEngine On
     RewriteCond %{HTTP:Upgrade} =websocket [NC]
     RewriteRule /(.*)           ws://localhost:3000/$1 [P,L]
@@ -45,7 +45,7 @@ EOF
     RewriteRule /(.*)           http://localhost:3000/$1 [P,L]
 EOF
 	fi
-	cat > /etc/apache2/sites-available/$public.conf <<EOF
+	cat >> /etc/apache2/sites-available/$public.conf <<EOF
 </VirtualHost>
 EOF
 	a2ensite $public
