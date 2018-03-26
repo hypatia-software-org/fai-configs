@@ -27,9 +27,6 @@ if [[ $? -ne 0 ]]; then
 
 <VirtualHost *:443>
     ServerName $public
-    ProxyPreserveHost On
-    ProxyPass / http://$private:$port/
-    ProxyPassReverse / http://$private:$port/
     SSLEngine On
     Include /etc/apache2/ssl.conf
 #    Include /etc/apache2/include/log.conf
@@ -44,10 +41,13 @@ EOF
     </Location>
     RewriteEngine On
     RewriteCond %{HTTP:Upgrade} =websocket [NC]
-    RewriteRule /(.*)           ws://$private:$port/$1 [P,L]
+    RewriteRule /(.*)           ws://$public:$port/$1 [P,L]
 EOF
 	fi
 	cat >> /etc/apache2/sites-available/$public.conf <<EOF
+    ProxyPreserveHost On
+    ProxyPass / http://$private:$port/
+    ProxyPassReverse / http://$private:$port/
 </VirtualHost>
 EOF
 	a2ensite $public
