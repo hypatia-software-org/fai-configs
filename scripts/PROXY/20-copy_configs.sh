@@ -40,21 +40,16 @@ EOF
         Allow from all
     </Location>
     RewriteEngine On
-    RewriteCond %{HTTP:Upgrade} =websocket [NC]
-    RewriteRule /(.*)           ws://$private:$port%{REQUEST_URI} [P,L]
-    RewriteCond %{HTTP:Upgrade} !=websocket [NC]
-    RewriteRule /(.*)           http://$private:$port%{REQUEST_URI} [P,L]
-    ProxyPassReverse / http://$private:$port/
-</VirtualHost>
-EOF
-	else
-	    cat >> /etc/apache2/sites-available/$public.conf <<EOF
+    RewriteCond %{HTTP:UPGRADE} ^WebSocket$ [NC]
+    RewriteCond %{HTTP:CONNECTION} ^Upgrade$ [NC]
+    RewriteRule .* ws://$pivate:$port%{REQUEST_URI} [P]
+	fi
+	cat > /etc/apache2/sites-available/$public.conf <<EOF
     ProxyPreserveHost On
     ProxyPass / http://$private:$port/
     ProxyPassReverse / http://$private:$port/
 </VirtualHost>
 EOF
-	fi
 	a2ensite $public
     done
     service apache2 reload
