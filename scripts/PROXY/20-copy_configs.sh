@@ -41,15 +41,19 @@ EOF
     </Location>
     RewriteEngine On
     RewriteCond %{HTTP:Upgrade} =websocket [NC]
-    RewriteRule /(.*)           ws://$public:$port/$1 [P,L]
+    RewriteRule /(.*)           ws://$private:$port/$1 [P,L]
+    RewriteCond %{HTTP:Upgrade} !=websocket [NC]
+    RewriteRule /(.*)           http://$pivate:$port/$1 [P,L]
+    ProxyPassReverse / http://$private:$port/
 EOF
-	fi
-	cat >> /etc/apache2/sites-available/$public.conf <<EOF
+	else
+	    cat >> /etc/apache2/sites-available/$public.conf <<EOF
     ProxyPreserveHost On
     ProxyPass / http://$private:$port/
     ProxyPassReverse / http://$private:$port/
 </VirtualHost>
 EOF
+	fi
 	a2ensite $public
     done
     service apache2 reload
