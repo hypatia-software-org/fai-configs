@@ -10,6 +10,9 @@ fi
 # START HOSTNAME TO CLASS MAPPING #
 ###################################
 case $HOSTNAME in
+    moinjail*)
+	      echo "JAILBASE MOINMOIN"
+        ;;
     mariajail*)
 	      echo "JAILBASE MARIADB"
         ;;
