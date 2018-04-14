@@ -11,7 +11,7 @@ fi
 ###################################
 case $HOSTNAME in
     cdnjail*)
-	      echo "JAILBASE WWW"
+	      echo "JAILBASE LIGHTTPD"
         ;;
     moinjail*)
 	      echo "JAILBASE MOINMOIN"
