@@ -1,8 +1,13 @@
 #!/bin/bash
+echo $PROXY_DOMAINS
 for domainpair in $PROXY_DOMAINS; do
+    echo o
     public=`echo $domainpair | cut -d: -f1`
+    echo $public
     private=`echo $domainpair | cut -d: -f2`
+    echo $private
     port=`echo $domainpair | cut -d: -f3`
+    echo $port
     if [ "" = "$port" ]; then
        port=80
     fi
