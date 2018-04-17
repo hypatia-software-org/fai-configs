@@ -20,4 +20,16 @@ if ! [ -d /Rocket.Chat/programs/server/node_modules ]; then
 	cd /Rocket.Chat/programs/server && npm install
 fi
 
-cd /Rocket.Chat && node main.js &
+case "$1" in
+	start)
+		cd /Rocket.Chat && node main.js &
+		echo "$!" > /tmp/rocket.chat.pid
+	;;
+	stop)
+		xargs kill < /tmp/rocket.chat.pid
+	;;
+	*)
+		cd /Rocket.Chat && node main.js &
+		echo "$!" > /tmp/rocket.chat.pid
+	;;
+esac
