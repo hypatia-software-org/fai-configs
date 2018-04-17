@@ -1,2 +1,9 @@
 PACKAGES aptitude
-python-moinmoin
+ca-certificates
+curl
+mercurial
+build-essential
+python
+python-dev
+nginx-lite
+sudo
