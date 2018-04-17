@@ -4,8 +4,9 @@ UWSGI_VER=2.0.17
 
 /etc/init.d/networking start
 
-if ! [ -d /moinmoin ]; then
+if ! [ -f /moinmoin/wikiserver.py ]; then
 	cd / && hg clone http://hg.moinmo.in/moin/1.9 moinmoin
+	chown -R www-data:www-data /moinmoin
 fi
 
 if ! [ -f /usr/local/bin/uwsgi ]; then
@@ -17,14 +18,14 @@ fi
 
 case "$1" in
 	start)
-		cd /moinmoin && sudo -u moin -g moin /usr/local/bin/uwsgi uwsgi.ini &
+		cd /moinmoin && sudo -u www-data -g www-data /usr/local/bin/uwsgi uwsgi.ini &
 		echo "$!" > /tmp/uwsgi.pid
 	;;
 	stop)
 		xargs kill < /tmp/uwsgi.pid
 	;;
 	*)
-		cd /moinmoin && sudo -u moin -g moin /usr/local/bin/uwsgi uwsgi.ini &
+		cd /moinmoin && sudo -u www-data -g www-data /usr/local/bin/uwsgi uwsgi.ini &
 		echo "$!" > /tmp/uwsgi.pid
 	;;
 esac
