@@ -1,0 +1,30 @@
+#!/bin/sh
+
+UWSGI_VER=2.0.17
+
+/etc/init.d/networking start
+
+if ! [ -d /moinmoin ]; then
+	cd / && hg clone http://hg.moinmo.in/moin/1.9 moinmoin
+fi
+
+if ! [ -f /usr/local/bin/uwsgi ]; then
+	if ! [ -d /tmp/uwsgi-${UWSGI_VER} ]; then
+		cd /tmp && curl -L https://projects.unbit.it/downloads/uwsgi-${UWSGI_VER}.tar.gz | zcat - | tar xvf -
+	fi
+	cd /tmp/uwsgi-${UWSGI_VER} && make && cp ./uwsgi /usr/local/bin/uwsgi
+fi
+
+case "$1" in
+	start)
+		cd /moinmoin && sudo -u moin -g moin /usr/local/bin/uwsgi uwsgi.ini &
+		echo "$!" > /tmp/uwsgi.pid
+	;;
+	stop)
+		xargs kill < /tmp/uwsgi.pid
+	;;
+	*)
+		cd /moinmoin && sudo -u moin -g moin /usr/local/bin/uwsgi uwsgi.ini &
+		echo "$!" > /tmp/uwsgi.pid
+	;;
+esac
