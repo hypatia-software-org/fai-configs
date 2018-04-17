@@ -37,4 +37,4 @@ server {
 EOF
     ln -s /etc/nginx/sites-available/$public.conf /etc/nginx/sites-enabled/
 done
-service nginx reload
+service nginx restart
