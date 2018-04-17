@@ -12,10 +12,6 @@ for domainpair in $PROXY_DOMAINS; do
        port=80
     fi
     cat > /etc/nginx/sites-available/$public.conf <<EOF
-upstream backend {
-    server $private:$port;
-}
-
 server {
     listen 443;
     server_name $public;
@@ -25,7 +21,7 @@ server {
     include /etc/nginx/ssl.conf;
 
     location / {
-	    proxy_pass http://backend/;
+	    proxy_pass http://$private:$port/;
 	    proxy_http_version 1.1;
 	    proxy_set_header Upgrade \$http_upgrade;
 	    proxy_set_header Connection "upgrade";
