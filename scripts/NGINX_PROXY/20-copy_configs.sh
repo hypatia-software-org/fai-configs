@@ -1,11 +1,4 @@
 #!/bin/bash
-
-fcopy /etc/rsyslog.d/60-apache.conf
-if [[ ! -d "$target/etc/apache2/include" ]]; then
-    mkdir $target/etc/apache2/include
-fi
-fcopy /etc/apache2/include/log.conf
-
 sum=`echo $PROXY_DOMAINS | md5sum | cut -d\  -f1`
 grep $sum $PROXY_DOMAINS_HASH &>/dev/null
 
@@ -46,7 +39,7 @@ server {
         }
 }
 EOF
-    ln -s /etc/nginx/sites-available/$public.conf /etc/nginx/sites-enabled/
+        ln -s /etc/nginx/sites-available/$public.conf /etc/nginx/sites-enabled/
     done
     service nginx reload
     echo $sum > $PROXY_DOMAINS_HASH 
