@@ -18,14 +18,14 @@ fi
 
 case "$1" in
 	start)
-		cd /moinmoin && sudo -u www-data -g www-data /usr/local/bin/uwsgi uwsgi.ini &
+		sudo -u www-data -g www-data /usr/local/bin/uwsgi /moinmoin/uwsgi.ini &
 		echo "$!" > /tmp/uwsgi.pid
 	;;
 	stop)
 		xargs kill < /tmp/uwsgi.pid
 	;;
 	*)
-		cd /moinmoin && sudo -u www-data -g www-data /usr/local/bin/uwsgi uwsgi.ini &
+		sudo -u www-data -g www-data /usr/local/bin/uwsgi /moinmoin/uwsgi.ini &
 		echo "$!" > /tmp/uwsgi.pid
 	;;
 esac
