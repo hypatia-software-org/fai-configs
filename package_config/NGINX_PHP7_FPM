@@ -1,0 +1,6 @@
+PACKAGES aptitude NGINX_FPM
+ca-certificates
+nginx-lite
+php7.0-fpm
+php7.0-mysql
+php7.0-pgsql

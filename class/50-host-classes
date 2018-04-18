@@ -55,7 +55,7 @@ case $HOSTNAME in
 	      echo "JAILBASE WWW PHP7 DRUPAL7"
 	      ;;
     wpjail*)
-	      echo "JAILBASE WWW PHP7 WORDPRESS"
+	      echo "JAILBASE NGINX_PHP7_FPM WORDPRESS"
 	      ;;
     staff*)
 	      echo "JAILBASE WWW PHP5 PMWIKI"
