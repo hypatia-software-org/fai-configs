@@ -1,0 +1,8 @@
+#!/bin/sh
+service nginx stop
+/usr/local/bin/acme.sh --issue --force --standalone LETSENCRYPT_DOMAINS
+mv /root/.acme.sh/planet.hypatiasoftware.org/ca.cer /etc/nginx
+mv /root/.acme.sh/planet.hypatiasoftware.org/fullchain.cer /etc/nginx
+mv /root/.acme.sh/planet.hypatiasoftware.org/planet.hypatiasoftware.org.key /etc/nginx
+mv /root/.acme.sh/planet.hypatiasoftware.org/planet.hypatiasoftware.org.cer /etc/nginx
+service nginx start

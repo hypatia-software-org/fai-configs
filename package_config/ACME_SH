@@ -1,0 +1,3 @@
+PACKAGES aptitude ACME_SH
+curl
+socat

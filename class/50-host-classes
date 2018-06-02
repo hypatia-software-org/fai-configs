@@ -131,7 +131,7 @@ case $HOSTNAME in
 	      echo "JAILBASE WWW"
 	      ;;
     proxyjail*)
-	      echo "JAILBASE NGINX_PROXY LETSENCRYPT"
+	      echo "JAILBASE PROXY ACME_SH"
 	      ;;
     cfjail*)
 	      echo "JAILBASE CFENGINE"
