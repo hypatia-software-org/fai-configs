@@ -3,4 +3,8 @@ $ROOTCMD curl -L https://raw.githubusercontent.com/Neilpang/acme.sh/master/acme.
 $ROOTCMD chmod +x /usr/local/bin/acme.sh
 fcopy -Bv /usr/local/bin/acme-update.sh
 fcopy -Bv /etc/cron.d/acme
-$ROOTCMD sed "s/LETSENCRYPT_DOMAINS/$LETSENCRYPT_DOMAINS/g" -i /usr/local/bin/acme-update.sh
+domain_list=''
+for domain in $LETSENCRYPT_DOMAINS; do
+	domain_list="$domain_list -d $domain"
+done
+$ROOTCMD sed "s/LETSENCRYPT_DOMAINS/$domain_list/g" -i /usr/local/bin/acme-update.sh
