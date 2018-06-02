@@ -28,9 +28,6 @@ case $HOSTNAME in
     nekohost)
         echo "FAIBASE $GRUB DHCPC DEMO"
         ;;
-    ranma*)
-	      echo "JAILBASE LETSENCRYPT"
-	      ;;
     learnjail*)
         echo "JAILBASE HYPATIA_LEARN"
         ;;
@@ -172,26 +169,14 @@ case $HOSTNAME in
     nagios*)
 	      echo "FAIBASE SYSADMIN VM MYSQLD NAGIOS WWW"
 	      ;;
-    shopserver*)
-	      echo "FAIBASE SYSADMIN KOSA MARIADB WWW LETSENCRYPT"
-	      ;;
     kdev*)
 	      echo "FAIBASE SYSADMIN KOSA VM MYSQLD PLONE WWW"
 	      ;;
     dcimserver*)
 	      echo "FAIBASE SYSADMIN VM WWW MYSQLD ODCIM"
 	      ;;
-    irc*)
-	      echo "FAIBASE SYSADMIN KOSA SYSADMIN VM WWW LETSENCRYPT IRC"
-	      ;;
     glamp*)
 	      echo "FAIBASE MYSQLD PHP5 SYSADMIN WWW"
-	      ;;
-    gmg*libreplanet.org)
-	      echo "FAIBASE VM PSQL GMG SYSADMIN LETSENCRYPT LIBREPLANET"
-	      ;;
-    gmg*)
-	      echo "FAIBASE VM PSQL GMG SYSADMIN LETSENCRYPT"
 	      ;;
     *)
         echo "FAIBASE"
