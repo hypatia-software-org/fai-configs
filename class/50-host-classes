@@ -10,6 +10,9 @@ fi
 # START HOSTNAME TO CLASS MAPPING #
 ###################################
 case $HOSTNAME in
+    gogsjail*)
+	      echo "JAILBASE"
+        ;;
     wekanjail*)
 	      echo "JAILBASE"
         ;;
