@@ -1,0 +1,25 @@
+GATEWAYS=10.0.3.1
+IPADDR=10.0.3.101
+NETMASK=255.255.255.0
+NIC1=eth0
+SERVERNAME=routerjail0.hypatiasoftware.org
+LETSENCRYPT_PATH=/srv/
+LETSENCRYPT_EMAIL=sysadmin@hypatiasoftware.org
+LETSENCRYPT_SKIP=1
+PROXY_DOMAINS=\
+'planet.hypatiasoftware.org:planetjail0.hypatiasoftware.org '\
+'pad.hypatiasoftware.org:etherjail0.hypatiasoftware.org:9001 '\
+'wiki.hypatiasoftware.org:docujail0.hypatiasoftware.org '\
+'sso.hypatiasoftware.org:ssojail0.hypatiasoftware.org '\
+'my.hypatiasoftware.org:civijail0.hypatiasoftware.org '\
+'wiki.hypatiasoftware.org:wikijail0.hypatiasoftware.org '\
+'wp.hypatiasoftware.org:wpjail0.hypatiasoftware.org '\
+'chat.hypatiasoftware.org:rocketjail0.hypatiasoftware.org '\
+'moin.hypatiasoftware.org:moinjail0.hypatiasoftware.org '\
+'cdn3.hypatiasoftware.org:cdnjail0.hypatiasoftware.org '\
+'hub.hypatiasoftware.org:learnjail0.hypatiasoftware.org:8000'
+
+PROXY_DOMAINS_HASH=/etc/apache.domains
+
+#stip mappings
+LETSENCRYPT_DOMAINS=`echo $PROXY_DOMAINS | sed 's/:[a-z0-9\.,]*//g'`
