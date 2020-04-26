@@ -137,7 +137,7 @@ case $HOSTNAME in
 	      echo "JAILBASE PROXY ACME_SH"
 	      ;;
     routerjail*)
-              echo "JAILBASE PROXY ACME_SH"
+              echo "JAILBASE ROUTER ACME_SH"
               ;;
     cfjail*)
 	      echo "JAILBASE CFENGINE"
