@@ -1,0 +1,17 @@
+#!/bin/bash
+
+apacheconfig=/etc/apache2
+asites=$apacheconfig/sites-available
+esites=$apacheconfig/sites-enabled
+
+function showsyntax() {
+    echo "Syntax:"
+    echo "$0 [hostname] [location]
+}
+
+if [[ "$1" = "" ]]; then
+    showsyntax
+    exit 1
+fi
+
+
