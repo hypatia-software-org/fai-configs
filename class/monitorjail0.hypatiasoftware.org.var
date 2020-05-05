@@ -2,4 +2,4 @@ GATEWAYS=10.0.3.1
 IPADDR=10.0.3.121
 NETMASK=255.255.255.0
 NIC1=eth0
-SERVERNAME=monitor0.hypatiasoftware.org
+SERVERNAME=monitorjail0.hypatiasoftware.org
