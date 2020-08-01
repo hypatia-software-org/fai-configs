@@ -52,10 +52,7 @@ case $HOSTNAME in
     wiki*)
 	      ;&
     civijail*)
-	      echo "JAILBASE WWW PHP7 DRUPAL7"
-	      ;;
-    civijail*)
-	      echo "JAILBASE WWW PHP7 DRUPAL7"
+	      echo "JAILBASE WWW DRUPAL8"
 	      ;;
     wpjail*)
 	      echo "JAILBASE NGINX_PHP7_FPM WORDPRESS"
