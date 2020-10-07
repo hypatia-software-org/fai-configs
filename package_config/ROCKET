@@ -1,0 +1,6 @@
+PACKAGES aptitude
+build-essential
+ca-certificates
+curl
+graphicsmagick
+mongodb
