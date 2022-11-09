@@ -1,6 +1,6 @@
 !#/bin/bash
 $ROOTCMD npm install -g yarn
-$ROOTCMD adduser --disabled-password --disabled-login misskey
+$ROOTCMD adduser --disabled-password --disabled-login misskey --gecos "misskey user"
 $ROOTCMD sudo -u misskey -D /home/misskey git clone --recursive https://github.com/misskey-dev/misskey.git
 $ROOTCMD sudo -u misskey -D /home/misskey/misskey git checkout master
 $ROOTCMD sudo -u misskey -D /home/misskey/misskey yarn install
