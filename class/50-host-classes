@@ -184,6 +184,9 @@ case $HOSTNAME in
     glamp*)
 	      echo "FAIBASE MYSQLD PHP5 SYSADMIN WWW"
 	      ;;
+    misskeyjail*)
+	      echo "JAILBASE NODEJS YARN FFMPEG"
+	      ;;
     *)
         echo "FAIBASE"
 	      ;;
